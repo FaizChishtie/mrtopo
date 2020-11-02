@@ -29,17 +29,34 @@ def find_enum(name, _enum):
 
 
 # Configuration for system
-class Config():
-
+class Config:
     def __init__(self):
-        plan = TestPlan.DEFAULT
-        topologies = [Topology.DEFAULT]
+        self.plan = TestPlan.DEFAULT
+        self.topologies = [ TestPlan.DEFAULT ]
+
+    def __eq__(self, other):
+        return other.plan == self.plan and other.topologies == self.topologies
+
+    def __repr__(self):
+        top = ""
+        for t in self.topologies:
+            top += str(t) + " "
+        return "<Config Plan( " + str(self.plan) + " ) Topologies( " + top + ")>"
 
     # build config structure from json
     @staticmethod
-    def build(_dict):
+    def build(_dict: dict):
         c = Config()
-        c.plan = find_enum(_dict["plan"], TestPlan)
-        c.topologies = []
 
-    
+        if "plan" in _dict:
+            c.plan = find_enum(_dict["plan"], TestPlan)
+
+        if "topologies" in _dict:
+            c.topologies.clear()
+            topologies = _dict["topologies"]
+            if type(topologies) is list:
+                for t in topologies:
+                    c.topologies.append(find_enum(t, Topology))
+            elif type(topologies) is str:
+                c.topologies.append(find_enum(topologies, Topology))
+        return c
