@@ -3,7 +3,7 @@
 """
 
 from enum import Enum
-from src.logger import log
+from mrtopo.logger import log
 
 # Enum for error identities
 class ErrorIdentities(Enum):

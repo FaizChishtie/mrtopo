@@ -1,15 +1,15 @@
 import sys, getopt
 from mrtopo.logger import log
 from mrtopo.structures import config, Topology
+from mrtopo.translator import c_read
+from mrtopo.interpreter import interpret
 
 # from . import __version__ as version
 
 VERSION_NUMBER = "0.0.1"
 
-CONFIGURATION = config.Config()  # initialize default config
 
-
-def options(argv):
+def options(argv: list):
     try:
         opts, args = getopt.getopt(argv, "hc:", ["configfile="])
     except getopt.GetoptError:
@@ -27,6 +27,16 @@ def main(argv):
     config_file = options(argv)
     log('MrTopo.v.' + VERSION_NUMBER + '>')
     log(config_file, "HIGH")
+
+    configuration = config.Config()  # initialize default config
+
+    # translate
+    if config_file:
+        configuration = c_read(config_file)
+
+    # interpret
+    interpret(configuration)
+
 
 
 if __name__ == "__main__":
