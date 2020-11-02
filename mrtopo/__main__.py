@@ -26,7 +26,6 @@ def options(argv: list):
 def main(argv):
     config_file = options(argv)
     log('MrTopo.v.' + VERSION_NUMBER + '>')
-    log(config_file, "HIGH")
 
     configuration = config.Config()  # initialize default config
 
