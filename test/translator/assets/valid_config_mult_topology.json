@@ -1,0 +1,4 @@
+{
+  "plan": "CHO",
+  "topologies": ["RING", "TREE"]
+}

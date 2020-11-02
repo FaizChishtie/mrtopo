@@ -3,12 +3,12 @@
 """
 
 import json, glob, re
-from src.logger import log
+from mrtopo.logger import log
 from mrtopo.util.iofunctor import vald_def
 
 # gets and validates input based on validator output - default returns True on all input
 # on None invalid
-def get_input(message, validator=vald_def):
+def get_input(message: str, validator=vald_def):
     u_in = input(message)
 
     log('Validating ~' + u_in)
@@ -21,12 +21,12 @@ def get_input(message, validator=vald_def):
     return None
 
 # Function to read files of the type json 
-def read_json(file):
+def read_json(file: str):
     _json = None
     with open(file) as jfile:
         _json = json.load(jfile)
     return _json
 
 # looks for file in current directory
-def find_file(file):
+def find_file(file: str):
     return glob.glob('./' + file)
