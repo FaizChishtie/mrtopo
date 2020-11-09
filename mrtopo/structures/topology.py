@@ -8,7 +8,8 @@ from enum import Enum
 # Enum for topologies
 class Topology(Enum):
     DEFAULT = 0
-    RING = 1
-    ATT = 2
-    CHORDAL = 3
-    LEAF_SPINE = 4
+    MINIMAL = 1
+    LINEAR = 2
+    TREE = 3
+    RING = 4
+    TORUS = 5
