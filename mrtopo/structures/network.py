@@ -9,7 +9,7 @@ from mrtopo.structures import Topology
 
 class Network:
     def __init__(self):
-        self.topology = None
+        self.topology = None # used by mutator to generate networks following given topology's rules
 
     def __repr__(self):
         return "<Network Topology( " + str(self.topology.__class__) + " )>"
