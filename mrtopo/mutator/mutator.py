@@ -123,6 +123,20 @@ def mutate(file):
             if line.__contains__(del_switch):
                 commented_out_lines.append(link)
 
+        for switch in network[del_switch]:
+            if not switch.__contains__("host"):
+                if network[switch].__contains__(del_switch):
+                    network[switch].remove(del_switch)
+
+    for del_switch in deleted:
+        if network.__contains__(del_switch):
+            del network[del_switch]
+
+    log("UPDATED NETWORK")
+    log(network)
+
+    # WRITE CHANGES TO ACTUAL
+
     log(commented_out_lines)
 
     generated_file_actual = open(generated_file_name, "r")
@@ -131,8 +145,8 @@ def mutate(file):
     generated_file_actual.close()
 
     for line in commented_out_lines:
-        g_file_line[line[1]] = "# " + g_file_line[line[1]]
-        log(g_file_line[line[1]])
+        if not g_file_line[line[1]][0] == "#":
+            g_file_line[line[1]] = "# " + g_file_line[line[1]]
 
     generated_file_actual = open(generated_file_name, "w")
 
@@ -140,18 +154,6 @@ def mutate(file):
         generated_file_actual.write(line)
 
     generated_file_actual.close()
-
-
-
-    # n_remove = gen_link_remove(3)
-    # network_arr = get_hosts_list(file)
-    #
-    # deleted = mutated_lines(n_remove, network_arr)
-    #
-    # for d in deleted:
-    #     remove_host(d[0], d[1]) # 0 = name, 1 = line number
-    #
-    # tmp_write(file)
 
 def get_var_names(coll):
     names = []
@@ -180,24 +182,6 @@ def get_hosts_list(_file):
     finally:
         py_file.close()
     return []
-
-def gen_link_remove(boundary):
-    return random.random(boundary)
-
-def tmp_write(network):
-    pass
-
-def add_link(network):
-    pass
-
-def add_host(network):
-    pass
-
-def remove_link(network, line):
-    pass
-
-def remove_host(network, line):
-    pass
 
 if __name__ == "__main__":
     mutate(PATH_TO_TEMP)
