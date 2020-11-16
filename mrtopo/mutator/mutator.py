@@ -1,18 +1,29 @@
 """
     MrTopo - Mutator - handles mutation of networks
 """
-
-from mrtopo.translator import find_file
 from mrtopo.logger import log
+from mrtopo.structures.mutantnetwork import MutantNetwork
+from mrtopo.mutator.operators import Operations, do
 from shutil import copyfile
 from math import floor
 import random
 
-LINKS_TO_REMOVE = 0
 
-PATH_TO_TEMP = "./temp_topo.py"
 
-def mutate(file):
+GENERATIONS = 30
+
+def mutate(network):
+    log("Mutator - mutating network " + str(GENERATIONS)+ " times")
+    mutant_networks = [] # type MutantNetwork
+    for i in range(GENERATIONS):
+        operation = random.choice(list(Operations))
+        mn = do(operation, network.deep_copy(), i) # mutate deep copy of network
+        if mn:
+            mutant_networks.append(mn)
+    log(mutant_networks)
+    return mutant_networks
+
+def mutate2(file):
     # copy file first
 
     generated_file_name = "./generated.py"
@@ -148,7 +159,7 @@ def mutate(file):
         if not g_file_line[line[1]][0] == "#":
             g_file_line[line[1]] = "# " + g_file_line[line[1]]
 
-    generated_file_actual = open(generated_file_name, "w")
+    generated_file_actual = open(generated_file_name,  "w")
 
     for line in g_file_line:
         generated_file_actual.write(line)
@@ -175,13 +186,5 @@ def mutated_lines(n_remove, network_arr):
 
     return deleted
 
-def get_hosts_list(_file):
-    py_file = open(_file)
-    try:
-        pass
-    finally:
-        py_file.close()
-    return []
-
 if __name__ == "__main__":
-    mutate(PATH_TO_TEMP)
+    mutate2(PATH_TO_TEMP)

@@ -6,12 +6,19 @@ from mrtopo.logger import log
 from mrtopo.structures import config, network
 
 def interpret(cfg: config.Config):
-    log('Interpreter - Interpreting')
-    networks = construct_networks(cfg.topologies)
-    pass
+    log('Interpreter - interpreting config')
+    return c_construct_networks(cfg.topologies)
 
-def construct_networks(topologies: list):
+def interpret(py: dict):
+    log('Interpreter - interpreting py file')
+    return p_construct_networks(py)
+
+def p_construct_networks(py: dict):
+    return network.Network.p_build(py)
+
+def c_construct_networks(topologies: list):
     networks = []
     for t in topologies:
-        networks.append(network.Network.build(t))
+        networks.append(network.Network.c_build(t))
     return networks
+
