@@ -30,3 +30,6 @@ def read_json(file: str):
 # looks for file in current directory
 def find_file(file: str):
     return glob.glob('./' + file)
+
+def open_read(file: str):
+    return open(file, "r")
