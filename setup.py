@@ -1,14 +1,24 @@
-from setuptools import setup
+import setuptools
+import re
 
-setup(
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+version = re.search(
+    '^__version__\s*=\s*"(.*)"',
+    open('mrtopo/__main__.py').read(),
+    re.M
+    ).group(1)
+
+setuptools.setup(
     name='mrtopo',
-    version='0.0.1',
-    packages=['mrtopo', 'mrtopo.util', 'mrtopo.error', 'mrtopo.logger', 'mrtopo.mutator', 'mrtopo.validator',
-              'mrtopo.structures', 'mrtopo.structures.networks', 'mrtopo.structures.networks.ring', 'mrtopo.translator',
-              'mrtopo.interpreter'],
+    version=version,
+    packages=setuptools.find_packages(),
     url='https://github.com/FaizChishtie/mrtopo',
     license='MIT',
     author='faizchishtie',
     author_email='faizchishtie@gmail.com',
-    description='Mutate Mininet topology files with MrTopo'
+    description='Mutate Mininet topology files with MrTopo',
+    entry_points={'console_scripts': ['mrtopo = mrtopo.__main__:main']},
+    long_description=long_description
 )

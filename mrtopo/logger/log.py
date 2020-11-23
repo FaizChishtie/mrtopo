@@ -3,4 +3,4 @@
 """
 
 def log(item, level=""):
-    print(level, item)
+    print(item, level)

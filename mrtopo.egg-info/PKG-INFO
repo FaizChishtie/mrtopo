@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: mrtopo
+Version: 0.0.1
+Summary: Mutate Mininet topology files with MrTopo
+Home-page: https://github.com/FaizChishtie/mrtopo
+Author: faizchishtie
+Author-email: faizchishtie@gmail.com
+License: MIT
+Description: # Mr. Topo
+        
+        * Author: Faizaan Chishtie
+        
+Platform: UNKNOWN

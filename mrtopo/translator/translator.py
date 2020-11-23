@@ -63,9 +63,9 @@ def make_folder():
     _dir = os.path.dirname(os.path.realpath(__file__))
     dir_name = "MrTopoGenerated"
     path = os.path.join(_dir, dir_name)
-    if not os.path.isdir(path):
-        os.mkdir(path)
-    return path
+    if not os.path.isdir("MrTopoGenerated"):
+        os.mkdir("MrTopoGenerated")
+    return "MrTopoGenerated"
 
 
 def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
