@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class FileType(Enum):
     NOFILE = 0
     PYTHON = 1

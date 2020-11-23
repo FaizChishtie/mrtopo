@@ -1,5 +1,6 @@
 from mrtopo.structures.network import Network
 
+
 class MutantNetwork():
     def __init__(self, network: Network, _id: int, description: str, operation):
         self.network = network
@@ -9,7 +10,8 @@ class MutantNetwork():
         self.modified_item = None
 
     def __repr__(self):
-        return "<MutantNetwork (" + str(self.network) + ", " + str(self._id) + ", " + str(self.description) + ", " + str(self.operation) + ", Modified - " + str(self.modified_item) + ")>"
+        return "<MutantNetwork (" + str(self.network) + ", " + str(self._id) + ", " + str(
+            self.description) + ", " + str(self.operation) + ", Modified - " + str(self.modified_item) + ")>"
 
     def get_id(self):
         return self._id

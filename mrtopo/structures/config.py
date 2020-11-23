@@ -6,6 +6,7 @@ from enum import Enum
 from mrtopo.logger import log
 import json
 
+
 # Following https://wiki.onosproject.org/display/ONOS/Test+Plans
 class TestPlan(Enum):
     DEFAULT = 0
@@ -21,18 +22,19 @@ class TestPlan(Enum):
     def __str__(self):
         return self.name
 
+
 def find_enum(name, _enum):
     for item in _enum:
         if name == item.name:
             return item
-    return _enum.DEFAULT # default must exist for enums passed in TODO
+    return _enum.DEFAULT  # default must exist for enums passed in TODO
 
 
 # Configuration for system
 class Config:
     def __init__(self):
         self.plan = TestPlan.DEFAULT
-        self.topologies = [ TestPlan.DEFAULT ]
+        self.topologies = [TestPlan.DEFAULT]
 
     def __eq__(self, other):
         return other.plan == self.plan and other.topologies == self.topologies
