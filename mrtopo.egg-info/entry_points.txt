@@ -1,0 +1,3 @@
+[console_scripts]
+mrtopo = mrtopo.__main__:main
+

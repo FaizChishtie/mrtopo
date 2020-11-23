@@ -8,7 +8,7 @@ from mrtopo.filetype import FileType
 
 # from . import __version__ as version
 
-VERSION_NUMBER = "0.0.1"
+__version__ = "0.0.1"
 
 
 def options(argv: list):
@@ -19,7 +19,7 @@ def options(argv: list):
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('usage: mrtopo -c <configfile>\n\t-p <pyfile>')
+            print('usage: mrtopo:  -c <configfile>\n\t\t-p <pyfile>')
             sys.exit()
         elif opt in ("-p", "--pyfile"):
             return (args[0], FileType.PYTHON)
@@ -28,7 +28,7 @@ def options(argv: list):
 
 
 def main(argv):
-    log('MrTopo.v.' + VERSION_NUMBER + '>')
+    log('MrTopo.v.' + __version__ + '>')
 
     _file, file_type = options(argv)
 
