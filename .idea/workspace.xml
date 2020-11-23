@@ -48,17 +48,7 @@
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/filetype.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/filetype.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/interpreter/interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/interpreter/interpreter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/mutator/mutator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/mutator/mutator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/mutator/operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/mutator/operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/structures/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/structures/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/structures/mutantnetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/structures/mutantnetwork.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/structures/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/structures/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/translator/mrtopoio.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/translator/mrtopoio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/translator/translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/translator/translator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/util/iofunctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/util/iofunctor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +60,7 @@
       <list>
         <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -246,25 +237,25 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="706" y="473" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.1177@0.23.1920.1177" timestamp="1603683350534" />
-    <state width="1549" height="300" key="GridCell.Tab.0.bottom" timestamp="1606107048327">
+    <state width="1549" height="300" key="GridCell.Tab.0.bottom" timestamp="1606108084259">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1606107048327" />
+    <state width="1549" height="300" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084259" />
     <state width="1379" height="294" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506966" />
-    <state width="1549" height="300" key="GridCell.Tab.0.center" timestamp="1606107048326">
+    <state width="1549" height="300" key="GridCell.Tab.0.center" timestamp="1606108084257">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1606107048326" />
+    <state width="1549" height="300" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084257" />
     <state width="1379" height="294" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="300" key="GridCell.Tab.0.left" timestamp="1606107048326">
+    <state width="1549" height="300" key="GridCell.Tab.0.left" timestamp="1606108084257">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1606107048326" />
+    <state width="1549" height="300" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084257" />
     <state width="1379" height="294" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="300" key="GridCell.Tab.0.right" timestamp="1606107048327">
+    <state width="1549" height="300" key="GridCell.Tab.0.right" timestamp="1606108084258">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1606107048327" />
+    <state width="1549" height="300" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084258" />
     <state width="1379" height="294" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506965" />
     <state width="1379" height="335" key="GridCell.Tab.1.bottom" timestamp="1605503636456">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -290,10 +281,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="767" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1605497664018" />
-    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1605501697178">
+    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1606108499885">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1605501697178" />
+    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1606108499885" />
     <state x="625" y="300" width="670" height="753" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1605219703562" />
   </component>
   <component name="XDebuggerManager">

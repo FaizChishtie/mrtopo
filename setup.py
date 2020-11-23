@@ -1,13 +1,14 @@
-import setuptools
-from src import __version__
+from setuptools import setup
 
-setuptools.setup(name='mrtopo',
-      version=__version__,
-      description='generate .topo files with the mrtopo algorithm',
-      url='https://github.com/FaizChishtie/MrTopo',
-      author='Faizaan Chishtie',
-      author_email='faizchishtie@gmail.com',
-      packages=setuptools.find_packages(),
-      python_requires='>=3',
-      entry_points={'console_scripts': ['mrtopo = src.__main__:main']},
-      keywords=['mrtopo'])
+setup(
+    name='mrtopo',
+    version='0.0.1',
+    packages=['mrtopo', 'mrtopo.util', 'mrtopo.error', 'mrtopo.logger', 'mrtopo.mutator', 'mrtopo.validator',
+              'mrtopo.structures', 'mrtopo.structures.networks', 'mrtopo.structures.networks.ring', 'mrtopo.translator',
+              'mrtopo.interpreter'],
+    url='https://github.com/FaizChishtie/mrtopo',
+    license='MIT',
+    author='faizchishtie',
+    author_email='faizchishtie@gmail.com',
+    description='Mutate Mininet topology files with MrTopo'
+)
