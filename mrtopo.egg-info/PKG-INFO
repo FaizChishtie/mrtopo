@@ -1,4 +1,4 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.2
 Name: mrtopo
 Version: 0.0.1
 Summary: Mutate Mininet topology files with MrTopo
@@ -11,3 +11,4 @@ Description: # Mr. Topo
         * Author: Faizaan Chishtie
         
 Platform: UNKNOWN
+Requires-Python: >=3.0

@@ -5,10 +5,11 @@ from mrtopo.mutator import mutate
 from mrtopo.translator import c_read, p_read, m_write, desc_write
 from mrtopo.interpreter import interpret
 from mrtopo.filetype import FileType
+import docopt
 
 # from . import __version__ as version
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 
 def options(argv: list):
@@ -28,6 +29,7 @@ def options(argv: list):
 
 
 def main(argv):
+
     log('MrTopo.v.' + __version__ + '>')
 
     _file, file_type = options(argv)

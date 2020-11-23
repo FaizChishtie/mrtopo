@@ -3,11 +3,10 @@ setup.py
 mrtopo/__init__.py
 mrtopo/__main__.py
 mrtopo/filetype.py
-mrtopo/temp_topo.py
 mrtopo.egg-info/PKG-INFO
 mrtopo.egg-info/SOURCES.txt
 mrtopo.egg-info/dependency_links.txt
-mrtopo.egg-info/entry_points.txt
+mrtopo.egg-info/requires.txt
 mrtopo.egg-info/top_level.txt
 mrtopo/error/__init__.py
 mrtopo/error/error.py

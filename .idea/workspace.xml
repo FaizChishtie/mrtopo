@@ -48,7 +48,15 @@
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mrtopo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mrtopo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mrtopo-0.0.1-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mrtopo-0.0.1-py3-none-any.whl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mrtopo-0.0.1.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mrtopo-0.0.1.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo.egg-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +97,7 @@
       <recent name="$PROJECT_DIR$/mrtopo/structures/networks/ring" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__main__">
+  <component name="RunManager" selected="Shell Script.rm-test-env.sh">
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mrtopo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +140,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="rm-test-env.sh" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/rm-test-env.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="mrtopo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,34 +179,20 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in translator_unit.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="mrtopo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/translator" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/translator/translator_unit.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.__main__" />
       <item itemvalue="Python.mutator" />
       <item itemvalue="Python tests.Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" />
       <item itemvalue="Python tests.Unittests in interpreter_unit.py" />
-      <item itemvalue="Python tests.Unittests in translator_unit.py" />
+      <item itemvalue="Shell Script.rm-test-env.sh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.rm-test-env.sh" />
         <item itemvalue="Python.__main__" />
         <item itemvalue="Python.mutator" />
         <item itemvalue="Python tests.Unittests in interpreter_unit.py" />
         <item itemvalue="Python tests.Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" />
-        <item itemvalue="Python tests.Unittests in translator_unit.py" />
       </list>
     </recent_temporary>
   </component>
@@ -241,25 +246,25 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="706" y="473" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.1177@0.23.1920.1177" timestamp="1603683350534" />
-    <state width="1549" height="300" key="GridCell.Tab.0.bottom" timestamp="1606108084259">
+    <state width="1549" height="300" key="GridCell.Tab.0.bottom" timestamp="1606115268573">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084259" />
+    <state width="1549" height="300" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1606115268573" />
     <state width="1379" height="294" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506966" />
-    <state width="1549" height="300" key="GridCell.Tab.0.center" timestamp="1606108084257">
+    <state width="1549" height="300" key="GridCell.Tab.0.center" timestamp="1606115268573">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084257" />
+    <state width="1549" height="300" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1606115268573" />
     <state width="1379" height="294" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="300" key="GridCell.Tab.0.left" timestamp="1606108084257">
+    <state width="1549" height="300" key="GridCell.Tab.0.left" timestamp="1606115268572">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084257" />
+    <state width="1549" height="300" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1606115268572" />
     <state width="1379" height="294" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="300" key="GridCell.Tab.0.right" timestamp="1606108084258">
+    <state width="1549" height="300" key="GridCell.Tab.0.right" timestamp="1606115268573">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="300" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1606108084258" />
+    <state width="1549" height="300" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1606115268573" />
     <state width="1379" height="294" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506965" />
     <state width="1379" height="335" key="GridCell.Tab.1.bottom" timestamp="1605503636456">
       <screen x="0" y="23" width="1920" height="1057" />
