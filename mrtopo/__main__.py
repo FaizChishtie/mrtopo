@@ -2,7 +2,7 @@ import sys, getopt
 from mrtopo.logger import log
 from mrtopo.structures import config, Topology
 from mrtopo.mutator import mutate
-from mrtopo.translator import c_read, p_read, m_write
+from mrtopo.translator import c_read, p_read, m_write, desc_write
 from mrtopo.interpreter import interpret
 from mrtopo.filetype import FileType
 
@@ -59,6 +59,9 @@ def main(argv):
 
         for mutant in mutant_networks:
             m_write(mutant, _file)
+
+        desc_write(mutant_networks)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])

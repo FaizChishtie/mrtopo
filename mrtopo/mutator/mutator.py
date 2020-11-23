@@ -10,16 +10,18 @@ import random
 
 GENERATIONS = 30
 
+
 def mutate(network):
-    log("Mutator - mutating network " + str(GENERATIONS)+ " times")
-    mutant_networks = [] # type MutantNetwork
+    log("Mutator - mutating network " + str(GENERATIONS) + " times")
+    mutant_networks = []  # type MutantNetwork
     for i in range(GENERATIONS):
         operation = random.choice(list(Operations))
-        mn = do(operation, network.deep_copy(), i) # mutate deep copy of network
+        mn = do(operation, network.deep_copy(), i)  # mutate deep copy of network
         if mn:
             mutant_networks.append(mn)
     log(mutant_networks)
     return mutant_networks
+
 
 def get_var_names(coll):
     names = []
@@ -33,8 +35,9 @@ def get_var_names(coll):
         names.append(name.strip())
     return names
 
+
 def mutated_lines(n_remove, network_arr):
-    deleted = [] # links to be removed
+    deleted = []  # links to be removed
 
     for i in range(n_remove):
         deleted.append(random.choice(network_arr))

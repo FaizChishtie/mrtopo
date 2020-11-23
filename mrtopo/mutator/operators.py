@@ -4,11 +4,13 @@ from mrtopo.structures.network import Network
 import random
 import copy
 
+
 class Operations(Enum):
     ADDLINK = 0
     ADDSWITCH = 1
     REMOVELINK = 2
     REMOVESWITCH = 3
+
 
 def do(operation: Operations, network: Network, id: int):
     if operation == Operations.ADDLINK:
@@ -19,6 +21,7 @@ def do(operation: Operations, network: Network, id: int):
         return remove_link(network, id)
     if operation == Operations.REMOVESWITCH:
         return remove_switch(network, id)
+
 
 def add_link(network: Network, id):
     description = "Added link"
@@ -37,7 +40,6 @@ def add_link(network: Network, id):
             # ALL NODES LINKED TOGETHER
             # TODO ERROR
             return None
-
 
         s1 = random.choice(not_attempted)
         already_linked = network.network[s1]
@@ -69,6 +71,7 @@ def add_link(network: Network, id):
     mn.add_modified_item([s1, s2])
     return mn
 
+
 def add_switch(network: Network, id):
     description = "Added switch"
 
@@ -76,11 +79,18 @@ def add_switch(network: Network, id):
 
     description += " " + added_switch
 
+    random_switch = random.choice(list(network.network.keys()))  # choose switch to add link
+
     network.add_switch(added_switch)
 
+    description += " and added link to " + random_switch
+
+    network.add_link(added_switch, random_switch)  # add link
+
     mn = MutantNetwork(network, id, description, Operations.ADDSWITCH)
-    mn.add_modified_item(added_switch)
+    mn.add_modified_item([added_switch, random_switch])
     return mn
+
 
 def remove_link(network: Network, id):
     description = "Removed link"
@@ -95,6 +105,7 @@ def remove_link(network: Network, id):
     mn.add_modified_item(removed_link)
     return mn
 
+
 def remove_switch(network: Network, id):
     description = "Removed switch"
 
@@ -107,4 +118,3 @@ def remove_switch(network: Network, id):
     mn = MutantNetwork(network, id, description, Operations.REMOVESWITCH)
     mn.add_modified_item(removed_switch)
     return mn
-

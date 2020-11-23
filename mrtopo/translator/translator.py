@@ -8,7 +8,9 @@ from mrtopo.translator.mrtopoio import find_file, read_json, open_read
 from mrtopo.mutator.operators import Operations
 from mrtopo.structures import config, mutantnetwork, network
 from shutil import copyfile
+from datetime import date
 import os
+
 
 # Read a config file
 def c_read(file: str):
@@ -26,16 +28,17 @@ def c_read(file: str):
     else:
         configuration = config.Config()
 
-    return configuration #TODO Validation
+    return configuration  # TODO Validation
+
 
 # Read a py file
-def p_read(file: str): #TODO ADD TESTS
+def p_read(file: str):  # TODO ADD TESTS
     log('Translator - Reading: ' + file)
     _p = find_file(file)
     _d = {
-        "switch_lines" : [],
-        "link_lines" : [],
-        "host_lines" : []
+        "switch_lines": [],
+        "link_lines": [],
+        "host_lines": []
     }
     o_rf = open_read(file)
     line_no = 0
@@ -51,16 +54,19 @@ def p_read(file: str): #TODO ADD TESTS
     o_rf.close()
     return _d
 
+
 def to_line_obj(line, number):
-    return { "line_str" : line.strip(), "line_no" : number }
+    return {"line_str": line.strip(), "line_no": number}
+
 
 def make_folder():
-    dir = os.path.dirname(os.path.realpath(__file__))
+    _dir = os.path.dirname(os.path.realpath(__file__))
     dir_name = "MrTopoGenerated"
-    path = os.path.join(dir, dir_name)
+    path = os.path.join(_dir, dir_name)
     if not os.path.isdir(path):
         os.mkdir(path)
     return path
+
 
 def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
     filename = "mrtopo_gen_topo_" + str(mutant._id) + ".py"
@@ -81,21 +87,25 @@ def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
     n_hosts = len(mutant.network.get_hosts())
 
     if operation == Operations.ADDSWITCH:
-        switch_string = add_switch_string(modified, n_switches + 1)
-        host_string = add_host_string(modified + "_host", n_hosts + 1)
-        link_string = add_link_string(modified + "_host", modified)
+        new_switch = modified[0]
+        link_switch = modified[1]
+        switch_string = add_switch_string(new_switch, n_switches + 1)
+        host_string = add_host_string(new_switch + "_host", n_hosts + 1)
+        host_link_string = add_host_link_string(new_switch + "_host", new_switch)
+        switch_link_string = add_link_string(new_switch, link_switch)
 
         for i in range(len(line_list)):
             if line_list[i].__contains__("self.addSwitch"):
                 whitespace_len = len(line_list[i]) - len(line_list[i].strip()) - 1
-                line_list.insert(i, ' '*whitespace_len + switch_string)
-                line_list.insert(i+1, ' ' * whitespace_len + host_string)
+                line_list.insert(i, ' ' * whitespace_len + switch_string)
+                line_list.insert(i + 1, ' ' * whitespace_len + host_string)
                 break
 
         for i in range(len(line_list)):
             if line_list[i].__contains__("self.addLink"):
                 whitespace_len = len(line_list[i]) - len(line_list[i].strip()) - 1
-                line_list.insert(i, ' '*whitespace_len + link_string)
+                line_list.insert(i, ' ' * whitespace_len + host_link_string)
+                line_list.insert(i + 1, ' ' * whitespace_len + switch_link_string)  # add host and new switch link
                 break
 
     if operation == Operations.ADDLINK:
@@ -103,7 +113,7 @@ def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
         for i in range(len(line_list)):
             if line_list[i].__contains__("self.addLink"):
                 whitespace_len = len(line_list[i]) - len(line_list[i].strip()) - 1
-                line_list.insert(i, ' '*whitespace_len + link_string)
+                line_list.insert(i, ' ' * whitespace_len + link_string)
                 break
 
     if operation == Operations.REMOVELINK:
@@ -127,11 +137,42 @@ def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
 
     write_file.close()
 
+
+def desc_write(mutants: mutantnetwork.MutantNetwork, outfile="desc.txt"):  # create description doc for all cases
+
+    path = make_folder() + "/" + outfile
+
+    out_lines = []
+    today = date.today().strftime("%d/%m/%Y")
+    out_lines.append("MrTopo network mutation description file.\n")
+    out_lines.append("Generated on {}\n{}\n".format(today, '-' * 10))
+
+    for m in mutants:
+        out_lines.append("Case {}: {}\n".format(m.get_id(), m.get_operation()))
+        out_lines.append("{}\n".format(m.get_description()))
+        out_lines.append("Modified item(s): {}\n".format(m.get_modified_item()))
+        out_lines.append("{}\n".format('-' * 10))
+
+    write_file = open(path, "w")
+
+    for line in out_lines:
+        write_file.write(line)
+
+    write_file.close()
+
+
 def add_switch_string(name, number):
-    return name + " = " + "self.addSwitch(" +  "\'s" + str(number) + "\' ) # MRTOPO GENERATED LINE\n"
+    return name + " = " + "self.addSwitch(" + "\'s" + str(number) + "\' ) # MRTOPO GENERATED LINE\n"
+
 
 def add_host_string(name, number):
-    return name + " = " + "self.addHost(" +  "\'h" + str(number) + "\' ) # MRTOPO GENERATED LINE\n"
+    return name + " = " + "self.addHost(" + "\'h" + str(number) + "\' ) # MRTOPO GENERATED LINE\n"
+
 
 def add_link_string(s1, s2):
-    return "self.addLink({}, {}, bw=10, delay='0.345064487693ms') # MRTOPO GENERATED LINE\n".format(s1, s2) # TODO randomize opts
+    return "self.addLink({}, {}, bw=10, delay='0.345064487693ms') # MRTOPO GENERATED LINE\n".format(s1,s2)
+    # TODO randomize opts
+
+
+def add_host_link_string(s1, s2):
+    return "self.addLink({}, {}) # MRTOPO GENERATED LINE\n".format(s1, s2)  # TODO randomize opts

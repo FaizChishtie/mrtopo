@@ -11,8 +11,8 @@ import copy
 
 class Network:
     def __init__(self):
-        self.raw = None # dict lines
-        self.topology = None # used by mutator to generate networks following given topology's rules
+        self.raw = None  # dict lines
+        self.topology = None  # used by mutator to generate networks following given topology's rules
         self.switches = []
         self.links = []
         self.hosts = []
@@ -69,10 +69,10 @@ class Network:
 
                 self.add(s1, s2)
                 self.add(s2, s1)
-                self.links.append([s1,s2])
-                self.links.append([s2,s1])
+                self.links.append([s1, s2])
+                self.links.append([s2, s1])
 
-    def remove_link(self, s1:str, s2:str):
+    def remove_link(self, s1: str, s2: str):
         if self.link_exists(s1, s2):
             snet = None
             if s1.__contains__("host") or s2.__contains__("host"):
@@ -157,13 +157,11 @@ class Network:
                 else:
                     _snet = network
 
-
                 for _l in _link:
                     if _l != l:
                         _snet[l].append(_l)
 
             n.links.append(_link)  # TODO SUPPORT LINKS FOR ALL
-
 
     @staticmethod
     def p_build(lines: dict):
@@ -188,7 +186,7 @@ class Network:
         n = Network()
         # TODO MODULARIZE
         if topology == Topology.DEFAULT:
-            pass # TODO
+            pass  # TODO
         elif topology == Topology.MINIMAL:
             n.topology = MinimalTopo()
         elif topology == Topology.LINEAR:
@@ -200,6 +198,7 @@ class Network:
         elif topology == Topology.TORUS:
             n.topology = TorusTopo()
         return n
+
 
 def get_var_names(coll):
     names = []
