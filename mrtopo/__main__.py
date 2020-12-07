@@ -5,7 +5,6 @@ from mrtopo.mutator import mutate
 from mrtopo.translator import c_read, p_read, m_write, desc_write
 from mrtopo.interpreter import interpret
 from mrtopo.filetype import FileType
-import docopt
 
 # from . import __version__ as version
 
