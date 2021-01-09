@@ -1,27 +1,27 @@
 # Command Line Options
 
-### Python file option `--p`
+### Python file option `--pythonfile`
 
-Using the `--c` option allows for a Mininet topology file to be passed in to MrTopo.
+Using the `--pythonfile` or `-p` option allows for a Mininet topology file to be passed in to MrTopo.
 
 Format: 
 ```
-python3 mrtopo --p %PATH TO PYTHON FILE%
+mrtopo --pythonfile %PATH TO PYTHON FILE%
 ```
 
 Example:
 ```
-python3 mrtopo -p ./examples/temp_topo.py
+mrtopo -p ./examples/temp_topo.py
 ```
 
 
-### Configuration file option `--c`
+### Configuration file option `--configfile`
 
 > Currently not supported
 
-Using the `--c` option allows for a configuration file to be passed in to MrTopo.
+Using the `--configfile` or `-c` option allows for a configuration file to be passed in to MrTopo.
 
 Format: 
 ```
-python3 mrtopo --p %PATH TO CONFIG FILE%
+mrtopo -c %PATH TO CONFIG FILE%
 ```
