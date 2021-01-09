@@ -6,7 +6,7 @@ from mrtopo.translator import c_read, p_read, m_write, desc_write
 from mrtopo.interpreter import interpret
 from mrtopo.util.filetype import FileType
 
-__version__ = "0.0.8"
+__version__ = "0.0.9"
 
 def main_routine(args):
 

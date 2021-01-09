@@ -1,8 +1,6 @@
 import setuptools
 import re
 
-long_description_content_type='text/markdown'
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -24,12 +22,13 @@ setuptools.setup(
     python_requires='>=3.0',
     entry_points={'console_scripts': ['mrtopo = mrtopo.cli:main']},
     long_description=long_description,
+    long_description_content_type='text/markdown',
     install_requires=[
             'mininet', 'click'
     ],
     keywords='topology network startup',
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
