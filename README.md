@@ -15,26 +15,38 @@ MrTopo is developed in conjunction with the IoT research being conducted by [Dr.
 
 ## Basic Usage
 
-1. Clone the repository or install the package through `pip`:
+### Option 1: Install the package through `pip`:
 
 ```
-git clone https://github.com/FaizChishtie/mrtopo.git
-```
-Or
-```
-pip install mrtopo
+$ pip install mrtopo
 ```
 
-2. Run the following code in the project root directory.
+* Run the following:
 
 ```
-python3 setup.py develop
-python3 mrtopo -p ./examples/temp_topo.py
+$ mrtopo --help
+Usage: mrtopo [OPTIONS]
+
+Options:
+  -p, --pythonfile TEXT  Python file that MrTopo should mutate.
+  -c, --configfile TEXT  MrTopo config file.
+  --help
 ```
 
-This should create a `MrTopoGenerated` folder containing the mutated topology files generated from the `temp_topo.py` file.
+### Option 2: Clone the repo:
 
-3. Replace `./examples/temp_topo.py` with the path to your Mininet topology file.
+* Clone this repository
+* In the project directory run `$ sh set-test-env.sh`
+    * This creates a temporary venv where mrtopo will be installed
+* Run `$ mrtopo --help`
+    * If this doesn't work try `$ source tmpenv/bin/activate` and retry `$ mrtopo --help`
+
+## Examples
+
+1. Copy the `/examples/temp_topo.py` code to a local python file named `temp_topo.py`
+2. Run `mrtopo -p temp_topo.py`
+3. This should create a `MrTopoGenerated` folder containing the mutated topology files generated from the `temp_topo.py` file.
+4. Replace `temp_topo.py` with the path to your Mininet topology file.
 
 ## Further Notes
 

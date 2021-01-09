@@ -20,9 +20,24 @@ setuptools.setup(
     author_email='faizchishtie@gmail.com',
     description='Mutate Mininet topology files with MrTopo',
     python_requires='>=3.0',
-    # entry_points={'console_scripts': ['mrtopo = mrtopo.__main__:main']},
+    entry_points={'console_scripts': ['mrtopo = mrtopo.cli:main']},
     long_description=long_description,
     install_requires=[
-            'mininet'
-    ]
+            'mininet', 'click'
+    ],
+    keywords='topology network startup',
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'License :: MIT',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Topic :: Utilities',
+        'Typing :: Typed',
+    ],
 )
