@@ -1,5 +1,10 @@
 # Mr. Topo
 
+[![PyPI version badge](https://img.shields.io/pypi/v/mrtopo)](https://pypi.org/project/mrtopo/)
+[![PyPI Status Badge](https://img.shields.io/pypi/status/mrtopo)](https://pypi.org/project/mrtopo/)
+[![License](https://img.shields.io/github/license/faizchishtie/mrtopo)](https://github.com/faizchishtie/mrtopo/blob/master/LICENSE)
+[![Downloads per month](https://img.shields.io/pypi/dm/mrtopo)](https://pypi.org/project/mrtopo/)
+
 * Author: Faizaan Chishtie
 
 ## Description
@@ -50,5 +55,3 @@ Further documentation is available on the [MrTopo GitHub pages site.](https://fa
 ## Links
 
 * [PyPi MrTopo Package](https://pypi.org/project/mrtopo/)
-
-![Upload Python Package](https://github.com/FaizChishtie/mrtopo/workflows/Upload%20Python%20Package/badge.svg)
