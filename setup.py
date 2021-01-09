@@ -30,7 +30,7 @@ setuptools.setup(
         'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Developers',
-        'License :: MIT',
+        'License :: OSI Approved :: MIT',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',

@@ -1,5 +1,6 @@
 # Mr. Topo
 
+![Upload Python Package](https://github.com/FaizChishtie/mrtopo/workflows/Upload%20Python%20Package/badge.svg)
 [![PyPI version badge](https://img.shields.io/pypi/v/mrtopo)](https://pypi.org/project/mrtopo/)
 [![PyPI Status Badge](https://img.shields.io/pypi/status/mrtopo)](https://pypi.org/project/mrtopo/)
 [![License](https://img.shields.io/github/license/faizchishtie/mrtopo)](https://github.com/faizchishtie/mrtopo/blob/master/LICENSE)
