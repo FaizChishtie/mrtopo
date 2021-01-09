@@ -1,6 +1,8 @@
 import setuptools
 import re
 
+long_description_content_type='text/markdown'
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
