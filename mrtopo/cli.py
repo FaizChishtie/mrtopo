@@ -8,23 +8,37 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.group()
 def cli():
     '''
-        MrTopo is a python application that generates mutant Mininet topology files for network testing purposes.
+    MrTopo is a python application that generates mutant Mininet topology files for network testing purposes.
+    To get information on specific subcommands, use `mrtopo [COMMAND] --help`.
     '''
     pass
 
 
 @click.group()
-def generator():
+def mutator():
+    '''
+    MrTopo mutator
+    '''
     pass
 
 
 @click.command()
-@click.option('-p', '--python-file', type=str, help="Python file that MrTopo should mutate.")
-@click.option('-c', '--config-file', type=str, help="MrTopo config file.")
-def params(python_file, config_file):
-    if python_file != "":
-        main_routine((python_file, FileType.PYTHON))
-    elif config_file != "":
+@click.option('-f', '--file', type=str, required=True, help="Python file that MrTopo should mutate.")
+def python_file(file):
+    '''
+    Mutate a Mininet python file.
+    '''
+    if file != "":
+        main_routine((file, FileType.PYTHON))
+
+
+@click.command()
+@click.option('-f', '--file', type=str, required=True, help="MrTopo config file.")
+def config_file(file):
+    '''
+    Generate mutations from a configuration file.
+    '''
+    if file != "":
         click.echo("This option has not been implemented yet!")
 
 
@@ -34,28 +48,35 @@ def validator():
 
 
 @click.command()
-@click.option('-vf', '--validate-file', type=str, help="Validate a Mininet topology python file.")
-def validate_file(validate_file):
-    if validate_file != "":
-        validate_routine((validate_file, FileType.PYTHON))
+@click.option('-f', '--file', type=str, help="Validate a Mininet topology python file.")
+def validate_file(file):
+    '''
+    Validate a Mininet topology python file.
+    '''
+    if file != "":
+        validate_routine((file, FileType.PYTHON))
 
 
 @click.command()
-@click.option('-vd', '--validate-dir', type=str, help="Validate a directory of Mininet topologies.")
-def validate_dir(validate_dir):
-    if validate_dir != "":
-        validate_routine((validate_dir, FileType.DIRECTORY))
+@click.option('-d', '--dir', type=str, help="Validate a directory of Mininet topologies.")
+def validate_dir(dir):
+    '''
+    Validate a directory of Mininet topologies.
+    '''
+    if dir != "":
+        validate_routine((dir, FileType.DIRECTORY))
 
 
-# build generator
-generator.add_command(params)
+# build mutator
+mutator.add_command(python_file)
+mutator.add_command(config_file)
 
 # build validator
 validator.add_command(validate_file)
 validator.add_command(validate_dir)
 
 # build cli
-cli = click.CommandCollection(sources=[generator, validator])
+cli = click.CommandCollection(sources=[mutator, validator])
 
 # DEBUG
 

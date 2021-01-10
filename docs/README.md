@@ -1,5 +1,11 @@
 # Mr. Topo
 
+![Upload Python Package](https://github.com/FaizChishtie/mrtopo/workflows/Upload%20Python%20Package/badge.svg)
+[![PyPI version badge](https://img.shields.io/pypi/v/mrtopo)](https://pypi.org/project/mrtopo/)
+[![PyPI Status Badge](https://img.shields.io/pypi/status/mrtopo)](https://pypi.org/project/mrtopo/)
+[![License](https://img.shields.io/github/license/faizchishtie/mrtopo)](https://github.com/faizchishtie/mrtopo/blob/master/LICENSE)
+[![Downloads per month](https://img.shields.io/pypi/dm/mrtopo)](https://pypi.org/project/mrtopo/)
+
 * Author: Faizaan Chishtie
 
 ## Description
@@ -19,13 +25,17 @@ $ pip install mrtopo
 * Run the following:
 
 ```
-$ mrtopo --help
-Usage: mrtopo [OPTIONS]
+$ mrtopo
+Usage: mrtopo [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  -p, --pythonfile TEXT  Python file that MrTopo should mutate.
-  -c, --configfile TEXT  MrTopo config file.
-  --help
+  --help  Show this message and exit.
+
+Commands:
+  config-file    Generate mutations from a configuration file.
+  python-file    Mutate a Mininet python file.
+  validate-dir   Validate a directory of Mininet topologies.
+  validate-file  Validate a Mininet topology python file.
 ```
 
 ### Option 2: Clone the repo:
@@ -39,7 +49,7 @@ Options:
 ## Examples
 
 1. Copy the `/examples/temp_topo.py` code to a local python file named `temp_topo.py`
-2. Run `mrtopo -p temp_topo.py`
+2. Run `mrtopo python-file -f temp_topo.py`
 3. This should create a `MrTopoGenerated` folder containing the mutated topology files generated from the `temp_topo.py` file.
 4. Replace `temp_topo.py` with the path to your Mininet topology file.
 
@@ -50,5 +60,3 @@ Further documentation is available on the [MrTopo GitHub pages site.](https://fa
 ## Links
 
 * [PyPi MrTopo Package](https://pypi.org/project/mrtopo/)
-
-![Upload Python Package](https://github.com/FaizChishtie/mrtopo/workflows/Upload%20Python%20Package/badge.svg)
