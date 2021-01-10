@@ -47,8 +47,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/util/filetype.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/util/filetype.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +94,7 @@
       <recent name="$PROJECT_DIR$/mrtopo/structures/networks/ring" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__main__">
+  <component name="RunManager" selected="Python.cli">
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mrtopo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,6 +109,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mrtopo/__main__.py" />
       <option name="PARAMETERS" value="-p ../examples/temp_topo.py" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cli" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mrtopo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mrtopo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mrtopo/cli.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -144,20 +169,6 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="mrtopo" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/interpreter" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;interpreter_unit.InterpreterUnitTests.test_construct_networks&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests in interpreter_unit.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="mrtopo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,17 +186,17 @@
     <list>
       <item itemvalue="Python.__main__" />
       <item itemvalue="Python.mutator" />
-      <item itemvalue="Python tests.Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" />
       <item itemvalue="Python tests.Unittests in interpreter_unit.py" />
       <item itemvalue="Shell Script.rm-test-env.sh" />
+      <item itemvalue="Python.cli" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cli" />
         <item itemvalue="Python.__main__" />
         <item itemvalue="Shell Script.rm-test-env.sh" />
         <item itemvalue="Python.mutator" />
         <item itemvalue="Python tests.Unittests in interpreter_unit.py" />
-        <item itemvalue="Python tests.Unittests for interpreter_unit.InterpreterUnitTests.test_construct_networks" />
       </list>
     </recent_temporary>
   </component>
@@ -222,10 +233,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="470" y="170" width="1200" height="800" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1604294557990" />
-    <state x="676" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606107418784">
+    <state x="676" y="360" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610304073910">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="676" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1606107418784" />
+    <state x="676" y="360" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1610304073910" />
     <state x="582" y="204" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1606109626010">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -239,25 +250,25 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="706" y="473" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.1177@0.23.1920.1177" timestamp="1603683350534" />
-    <state width="1549" height="2" key="GridCell.Tab.0.bottom" timestamp="1606157898124">
+    <state width="1549" height="113" key="GridCell.Tab.0.bottom" timestamp="1610306109939">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="2" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1606157898124" />
+    <state width="1549" height="113" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1610306109939" />
     <state width="1379" height="294" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506966" />
-    <state width="1549" height="2" key="GridCell.Tab.0.center" timestamp="1606157898124">
+    <state width="1549" height="113" key="GridCell.Tab.0.center" timestamp="1610306109938">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="2" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1606157898124" />
+    <state width="1549" height="113" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1610306109938" />
     <state width="1379" height="294" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="2" key="GridCell.Tab.0.left" timestamp="1606157898123">
+    <state width="1549" height="113" key="GridCell.Tab.0.left" timestamp="1610306109937">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="2" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1606157898123" />
+    <state width="1549" height="113" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1610306109937" />
     <state width="1379" height="294" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="2" key="GridCell.Tab.0.right" timestamp="1606157898124">
+    <state width="1549" height="113" key="GridCell.Tab.0.right" timestamp="1610306109939">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="2" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1606157898124" />
+    <state width="1549" height="113" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1610306109939" />
     <state width="1379" height="294" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506965" />
     <state width="1379" height="335" key="GridCell.Tab.1.bottom" timestamp="1605503636456">
       <screen x="0" y="23" width="1920" height="1057" />

@@ -43,3 +43,7 @@ def main_routine(args):
             m_write(mutant, _file)
 
         desc_write(mutant_networks)
+
+
+def validate_routine(args):
+    log('MrTopo.v.' + __version__ + '-validator>')
