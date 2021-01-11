@@ -1,4 +1,5 @@
-import sys, getopt
+#!/usr/bin/env python3
+
 from mrtopo.logger import log
 from mrtopo.structures import config, Topology
 from mrtopo.mutator import mutate
@@ -47,7 +48,7 @@ def main_routine(args):
         desc_write(mutant_networks)
 
 
-def validate_routine(args):
+def validate_routine(args, name=None):
     log('MrTopo.v.' + __version__ + '-validator>')
 
     dest, file_type = args
@@ -59,13 +60,13 @@ def validate_routine(args):
         for _file in dir:
             n = len(_file)
             if _file[n-2] + _file[n-1] == "py":
-                files.append(_file)
+                files.append(f'{dest}/{_file}')
     else:
         files.append(dest)
 
     descriptor = []
 
     for _file in files:
-        descriptor.append(validate(_file))
+        descriptor.append(validate(_file, name))
 
     list_write(descriptor, "validator.txt")

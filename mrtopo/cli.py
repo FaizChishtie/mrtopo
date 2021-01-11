@@ -49,22 +49,29 @@ def validator():
 
 @click.command()
 @click.option('-f', '--file', type=str, help="Validate a Mininet topology python file.")
-def validate_file(file):
+@click.option('-t','--topology-name', type=str, default=None,
+              help="Name of topology found in python file.\nExample: \'topos = { 'someName': ... } - someName would "
+                   "be the topology-name. Only use this option if you know the topology name.")
+def validate_file(file, topology_name):
     '''
     Validate a Mininet topology python file.
     '''
     if file != "":
-        validate_routine((file, FileType.PYTHON))
+        validate_routine((file, FileType.PYTHON), topology_name)
 
 
 @click.command()
 @click.option('-d', '--dir', type=str, help="Validate a directory of Mininet topologies.")
-def validate_dir(dir):
+@click.option('-t','--topology-name', type=str, default=None,
+              help="Name of topology found in python file.\nExample: \'topos = { 'someName': ... } - someName would "
+                   "be the topology-name. Only use this option if you know that all python files in the specified dir"
+                   "follow the topology name given.")
+def validate_dir(dir, topology_name):
     '''
     Validate a directory of Mininet topologies.
     '''
     if dir != "":
-        validate_routine((dir, FileType.DIRECTORY))
+        validate_routine((dir, FileType.DIRECTORY), topology_name)
 
 
 # build mutator
