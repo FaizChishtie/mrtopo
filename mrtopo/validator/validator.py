@@ -3,10 +3,12 @@
 """
 
 import os
+import subprocess
+
 from mrtopo.logger import log
 
 
-def validate(file, name=None):
+def validate(file, name=None, long=False):
     log(f"Validating: {file}")
 
     if not name:
@@ -14,25 +16,34 @@ def validate(file, name=None):
 
     log(f"Topology name: {name}")
 
-    construct(file, name)
+    build = construct(file, name)
+    results = test(file, name, long)
 
-    test(file)
+    log(f"Success!")
 
-    return bundle(file, "Some descriptor")
+    descriptor = f"Build Details:\n{build}\n"
+
+    for res in results:
+        descriptor += f"{res}\n"
+
+    return bundle(file, descriptor)
 
 
 def construct(file, name):
     if os.geteuid() != 0:
         log(f"Root access is required to continue the execution of this script.")
-    os.system(f'sudo mn --custom {file} --topo {name}')
-    os.system('dump')
-    os.system('exit')
-    log(f"Success!")
-    pass
+    res = call(f'sudo mn --custom {file} --topo {name}')
+    call('exit')
+    return res
 
 
-def test(file):
-    pass
+def test(file, name, long):
+    benchmark = f"Benchmark:\n{call(f'sudo mn --custom {file} --topo {name} --test none')}"
+    if long:
+        pingall = f"Pingall:\n{call(f'sudo mn --custom {file} --topo {name} --test pingall')}"
+        return [benchmark, pingall]
+    else:
+        return [benchmark]
 
 
 def extract_name(file):
@@ -49,3 +60,9 @@ def extract_name(file):
 
 def bundle(file, descriptor):
     return f"Bundle {file}:\n{descriptor}\n"
+
+def call(command):
+    try:
+        return log(subprocess.check_output(command, shell=True).decode('utf-8'))
+    except subprocess.CalledProcessError:
+        return log(f'Command: {command} - failed')

@@ -50,8 +50,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/logger/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/logger/log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/validator/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/validator/validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/set-test-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/set-test-env.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/validator.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

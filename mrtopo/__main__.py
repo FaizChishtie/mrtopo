@@ -9,7 +9,7 @@ from mrtopo.util.filetype import FileType
 from mrtopo.validator.validator import validate
 import os
 
-__version__ = "0.0.9"
+__version__ = "0.1.0"
 
 def main_routine(args):
 
@@ -48,7 +48,7 @@ def main_routine(args):
         desc_write(mutant_networks)
 
 
-def validate_routine(args, name=None):
+def validate_routine(args, name=None, long=False):
     log('MrTopo.v.' + __version__ + '-validator>')
 
     dest, file_type = args
@@ -67,6 +67,6 @@ def validate_routine(args, name=None):
     descriptor = []
 
     for _file in files:
-        descriptor.append(validate(_file, name))
+        descriptor.append(validate(_file, name, long))
 
     list_write(descriptor, "validator.txt")
