@@ -20,7 +20,7 @@ setuptools.setup(
     author_email='faizchishtie@gmail.com',
     description='Mutate Mininet topology files with MrTopo',
     python_requires='>=3.0',
-    entry_points={'console_scripts': ['mrtopo = mrtopo.cli:main']},
+    entry_points={'console_scripts': ['mrtopo = mrtopo.cli:cli']},
     long_description=long_description,
     long_description_content_type='text/markdown',
     install_requires=[

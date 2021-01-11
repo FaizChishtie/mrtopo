@@ -59,13 +59,10 @@ def to_line_obj(line, number):
     return {"line_str": line.strip(), "line_no": number}
 
 
-def make_folder():
-    _dir = os.path.dirname(os.path.realpath(__file__))
-    dir_name = "MrTopoGenerated"
-    path = os.path.join(_dir, dir_name)
-    if not os.path.isdir("MrTopoGenerated"):
-        os.mkdir("MrTopoGenerated")
-    return "MrTopoGenerated"
+def make_folder(name="MrTopoGenerated"):
+    if not os.path.isdir(name):
+        os.mkdir(name)
+    return name
 
 
 def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
@@ -140,8 +137,6 @@ def m_write(mutant: mutantnetwork.MutantNetwork, original_file: str):
 
 def desc_write(mutants: mutantnetwork.MutantNetwork, outfile="desc.txt"):  # create description doc for all cases
 
-    path = make_folder() + "/" + outfile
-
     out_lines = []
     today = date.today().strftime("%d/%m/%Y")
     out_lines.append("MrTopo network mutation description file.\n")
@@ -153,9 +148,19 @@ def desc_write(mutants: mutantnetwork.MutantNetwork, outfile="desc.txt"):  # cre
         out_lines.append("Modified item(s): {}\n".format(m.get_modified_item()))
         out_lines.append("{}\n".format('-' * 10))
 
+    path = make_folder() + "/" + outfile
+
+    list_write(out_lines, outfile, path)
+
+
+def list_write(out, outfile, path=None):
+
+    if not path:
+        path = outfile
+
     write_file = open(path, "w")
 
-    for line in out_lines:
+    for line in out:
         write_file.write(line)
 
     write_file.close()

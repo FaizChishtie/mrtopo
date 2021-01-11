@@ -1,12 +1,15 @@
-import sys, getopt
+#!/usr/bin/env python3
+
 from mrtopo.logger import log
 from mrtopo.structures import config, Topology
 from mrtopo.mutator import mutate
-from mrtopo.translator import c_read, p_read, m_write, desc_write
+from mrtopo.translator import c_read, p_read, m_write, desc_write, list_write
 from mrtopo.interpreter import interpret
 from mrtopo.util.filetype import FileType
+from mrtopo.validator.validator import validate
+import os
 
-__version__ = "0.0.9"
+__version__ = "0.1.0"
 
 def main_routine(args):
 
@@ -43,3 +46,27 @@ def main_routine(args):
             m_write(mutant, _file)
 
         desc_write(mutant_networks)
+
+
+def validate_routine(args, name=None, long=False):
+    log('MrTopo.v.' + __version__ + '-validator>')
+
+    dest, file_type = args
+
+    files = []
+
+    if file_type == FileType.DIRECTORY:
+        dir = os.listdir(dest)
+        for _file in dir:
+            n = len(_file)
+            if _file[n-2] + _file[n-1] == "py":
+                files.append(f'{dest}/{_file}')
+    else:
+        files.append(dest)
+
+    descriptor = []
+
+    for _file in files:
+        descriptor.append(validate(_file, name, long))
+
+    list_write(descriptor, "validator.txt")
