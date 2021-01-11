@@ -18,6 +18,8 @@ def validate(file, name=None, long=False):
 
     construct(file, name)
 
+    test(file, name, long)
+
     if long:
         res_f = ['dmp', 'bch', 'pga']
     else:
@@ -47,8 +49,7 @@ def validate(file, name=None, long=False):
 def construct(file, name):
     if os.geteuid() != 0:
         log(f"Root access is required to continue the execution of this script.")
-    res = call('ls -l > dmp')
-    # res = call(f'sudo mn --custom {file} --topo {name} --test dump > dmp')
+    res = call(f'sudo mn --custom {file} --topo {name} --test dump > dmp')
     return res
 
 
