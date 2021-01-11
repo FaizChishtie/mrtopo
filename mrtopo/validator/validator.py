@@ -16,15 +16,30 @@ def validate(file, name=None, long=False):
 
     log(f"Topology name: {name}")
 
-    build = construct(file, name)
-    results = test(file, name, long)
+    construct(file, name)
+
+    if long:
+        res_f = ['dmp', 'bch', 'pga']
+    else:
+        res_f = ['dmp', 'bch']
+
+    results = []
+
+    for f in res_f:
+        try:
+            results.append(f'\t* Command: {find_cmd(f, file, name)}\n>>> <{open(f, "r").read()}>')
+        except:
+            results.append(f'\t* Command: {find_cmd(f, file, name)} - failed')
 
     log(f"Success!")
 
-    descriptor = f"Build Details:\n{build}\n"
+    descriptor = "Details:"
 
     for res in results:
-        descriptor += f"{res}\n"
+        if res != "":
+            descriptor += f"\n{res}\n"
+
+    del_all()
 
     return bundle(file, descriptor)
 
@@ -32,15 +47,15 @@ def validate(file, name=None, long=False):
 def construct(file, name):
     if os.geteuid() != 0:
         log(f"Root access is required to continue the execution of this script.")
-    res = call(f'sudo mn --custom {file} --topo {name}')
-    call('exit')
+    res = call('ls -l > dmp')
+    # res = call(f'sudo mn --custom {file} --topo {name} --test dump > dmp')
     return res
 
 
 def test(file, name, long):
-    benchmark = f"Benchmark:\n{call(f'sudo mn --custom {file} --topo {name} --test none')}"
+    benchmark = f"Benchmark:\n{call(f'sudo mn --custom {file} --topo {name} --test none > bch')}"
     if long:
-        pingall = f"Pingall:\n{call(f'sudo mn --custom {file} --topo {name} --test pingall')}"
+        pingall = f"Pingall:\n{call(f'sudo mn --custom {file} --topo {name} --test pingall > pga')}"
         return [benchmark, pingall]
     else:
         return [benchmark]
@@ -61,8 +76,27 @@ def extract_name(file):
 def bundle(file, descriptor):
     return f"Bundle {file}:\n{descriptor}\n"
 
+
 def call(command):
     try:
         return log(subprocess.check_output(command, shell=True).decode('utf-8'))
     except subprocess.CalledProcessError:
         return log(f'Command: {command} - failed')
+
+
+def del_all():
+    all = ['bch', 'pga', 'dmp']
+    for f in all:
+        try:
+            os.remove(f)
+        except FileNotFoundError:
+            log(f'{f} does not exist')
+
+
+def find_cmd(fn, file, name):
+    if fn == 'bch':
+        return f'sudo mn --custom {file} --topo {name} --test none > bch'
+    elif fn == 'pga':
+        return f'sudo mn --custom {file} --topo {name} --test pingall > pga'
+    elif fn == 'dmp':
+        return f'sudo mn --custom {file} --topo {name} --test dump > dmp'
