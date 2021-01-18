@@ -48,7 +48,7 @@ def validator():
 
 
 @click.command()
-@click.option('-f', '--file', type=str, help="Validate a Mininet topology python file.")
+@click.option('-f', '--file', type=str, required=True, help="Validate a Mininet topology python file.")
 @click.option('-t','--topology-name', type=str, default=None,
               help="Name of topology found in python file.\nExample: \'topos = { 'someName': ... } - someName would "
                    "be the topology-name. Only use this option if you know the topology name.")
@@ -63,11 +63,11 @@ def validate_file(file, topology_name, long):
 
 
 @click.command()
-@click.option('-d', '--dir', type=str, help="Validate a directory of Mininet topologies.")
+@click.option('-d', '--dir', type=str, required=True, help="Validate a directory of Mininet topologies.")
 @click.option('-t','--topology-name', type=str, default=None,
               help="Name of topology found in python file.\nExample: \'topos = { 'someName': ... } - someName would "
                    "be the topology-name. Only use this option if you know that all python files in the specified dir"
-                   "follow the topology name given.")
+                   " follow the topology name given.")
 @click.option('--long/--not-long', default=False,
               help="Long test flag (i.e. pingall)")
 def validate_dir(dir, topology_name, long):

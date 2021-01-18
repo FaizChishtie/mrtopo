@@ -47,9 +47,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/onos-install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/HOWTO/COMMANDLINEOPTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/HOWTO/COMMANDLINEOPTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/HOWTO/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/validator/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/validator/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rm-test-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/rm-test-env.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set-test-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/set-test-env.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,15 +86,15 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test/interpreter/assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mrtopo/structures" />
       <recent name="$PROJECT_DIR$/mrtopo" />
       <recent name="$PROJECT_DIR$/tmp" />
-      <recent name="$PROJECT_DIR$/mrtopo/mutator" />
-      <recent name="$PROJECT_DIR$/mrtopo/structures/networks/ring" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/interpreter/assets" />
     </key>
   </component>
   <component name="RunManager" selected="Python.temp_topo">
@@ -177,7 +184,7 @@
     </configuration>
     <configuration name="rm-test-env.sh" type="ShConfigurationType" temporary="true">
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/rm-test-env.sh" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/scripts/rm-test-env.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -253,25 +260,25 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="706" y="473" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.1177@0.23.1920.1177" timestamp="1603683350534" />
-    <state width="1549" height="113" key="GridCell.Tab.0.bottom" timestamp="1610311767429">
+    <state width="1549" height="113" key="GridCell.Tab.0.bottom" timestamp="1610332924614">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="113" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1610311767429" />
+    <state width="1549" height="113" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1610332924614" />
     <state width="1379" height="294" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506966" />
-    <state width="1549" height="113" key="GridCell.Tab.0.center" timestamp="1610311767428">
+    <state width="1549" height="113" key="GridCell.Tab.0.center" timestamp="1610332924614">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="113" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1610311767428" />
+    <state width="1549" height="113" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1610332924614" />
     <state width="1379" height="294" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="113" key="GridCell.Tab.0.left" timestamp="1610311767428">
+    <state width="1549" height="113" key="GridCell.Tab.0.left" timestamp="1610332924613">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="113" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1610311767428" />
+    <state width="1549" height="113" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1610332924613" />
     <state width="1379" height="294" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506964" />
-    <state width="1549" height="113" key="GridCell.Tab.0.right" timestamp="1610311767429">
+    <state width="1549" height="113" key="GridCell.Tab.0.right" timestamp="1610332924614">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1549" height="113" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1610311767429" />
+    <state width="1549" height="113" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1610332924614" />
     <state width="1379" height="294" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1604957506965" />
     <state width="1379" height="335" key="GridCell.Tab.1.bottom" timestamp="1605503636456">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -297,10 +304,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="767" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1605497664018" />
-    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1610235850385">
+    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup" timestamp="1610941825982">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1610235850385" />
+    <state x="625" y="272" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1610941825982" />
     <state x="625" y="300" width="670" height="753" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1605219703562" />
   </component>
   <component name="XDebuggerManager">

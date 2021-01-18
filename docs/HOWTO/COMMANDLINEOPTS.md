@@ -1,27 +1,176 @@
 # Command Line Options
 
-### Python file option `--pythonfile`
+All MrTopo commands are executed in this format:
 
-Using the `--pythonfile` or `-p` option allows for a Mininet topology file to be passed in to MrTopo.
-
-Format: 
 ```
-mrtopo --pythonfile %PATH TO PYTHON FILE%
+$ mrtopo [COMMAND] [OPTION] [ARGS]
 ```
 
-Example:
+To get help for any command, execute:
+
 ```
-mrtopo -p ./examples/temp_topo.py
+$ mrtopo [COMMAND] --help
 ```
 
+MrTopo commands:
+* `config-file`: *Not yet implemented* - Generate mutations from a configuration file.
+* `python-file`: Mutate a Mininet python file.
+* `validate-dir`: Validate a directory of Mininet topologies.
+* `validate-file`:  Validate a Mininet topology python file.
 
-### Configuration file option `--configfile`
+Most `mrtopo` commands will use the option `-f` to specify (except for `validate-dir` which takes `-d` )
 
-> Currently not supported
+### Command: `python-file`
 
-Using the `--configfile` or `-c` option allows for a configuration file to be passed in to MrTopo.
+MrTopo command used to generate a folder of mutated mininet topologies.
 
-Format: 
+#### Options:
+
+* `-f, --file <path to python file>` [Required]: Accepts a Mininet topology file `.py`
+
+#### Usage: 
+
+> The topology file specified must be a [mininet topology](http://mininet.org/walkthrough/#custom-topologies).
+
 ```
-mrtopo -c %PATH TO CONFIG FILE%
+$ mrtopo python-file -f some_topology.py
+```
+
+#### Help:
+```
+$ mrtopo python-file --help                                                                                                                              2 ↵  8209  22:19:58
+Usage: mrtopo python-file [OPTIONS]
+
+  Mutate a Mininet python file.
+
+Options:
+  -f, --file TEXT  Python file that MrTopo should mutate.  [required]
+  --help           Show this message and exit.
+```
+
+### Command: `config-file`
+
+> Note: This option has **not yet been implemented**
+
+#### Options:
+
+* `-f, --file <path to configuration file>` [Required]: Accepts a MrTopo configuration file `.json`
+
+#### Usage: 
+```
+mrtopo python-file -f some_config.json
+```
+
+#### Help:
+```
+$ mrtopo config-file --help                                                                                                                                ✔  8210  22:20:01
+Usage: mrtopo config-file [OPTIONS]
+
+  Generate mutations from a configuration file.
+
+Options:
+  -f, --file TEXT  MrTopo config file.  [required]
+  --help           Show this message and exit.
+```
+
+### Command: `validate-file`
+
+> Note: `validate-file` **will only run a [Mininet VM](http://mininet.org/download/#option-1-mininet-vm-installation-easy-recommended)**.
+
+MrTopo command used to test the validity of a Mininet topology file. 
+
+#### Options:
+
+* `-f, --file <path to python file>` [Required]: Accepts a Mininet topology file `.py`
+* `-t, --topology-name <string>` [Optional]: Name of topology found in python file.
+
+Routine:
+
+* `--not-long` [Optional] - *Default*: Execute short validation routine 
+* `--long` [Optional]: Execute long validation routine 
+
+#### Usage:
+
+```
+Base: 
+$ mrtopo validate-file -f some_file.py
+
+Base + Topology Name: 
+$ mrtopo validate-file -f some_file.py -t 'att'
+
+Base + Routine: 
+$ mrtopo validate-file -f some_file.py --long
+
+Base + Routine + Topology Name: 
+$ mrtopo validate-file -f some_file.py -t 'att' --not-long
+```
+
+#### Help:
+```
+$ mrtopo validate-file --help
+Usage: mrtopo validate-file [OPTIONS]
+
+  Validate a Mininet topology python file.
+
+Options:
+  -f, --file TEXT           Validate a Mininet topology python file.   [required]
+  -t, --topology-name TEXT  Name of topology found in python file. Example:
+                            'topos = { 'someName': ... } - someName would be
+                            the topology-name. Only use this option if you
+                            know the topology name.
+
+  --long / --not-long       Long test flag (i.e. pingall)
+  --help                    Show this message and exit.
+```
+
+### Command: `validate-dir`
+
+> Note: `validate-dir` **will only run a [Mininet VM](http://mininet.org/download/#option-1-mininet-vm-installation-easy-recommended)**.
+
+MrTopo command used to test the validity of a Mininet topology file. 
+
+#### Options:
+
+* `-d, --dir <path to directory of python files>` [Required]: Accepts directory of Mininet topology files 
+  * Will only parse python files from given directory - folder can contain other files.
+* `-t, --topology-name <string>` [Optional]: Name of topology found in python file.
+
+Routine:
+
+* `--not-long` [Optional] - *Default*: Execute short validation routine 
+* `--long` [Optional]: Execute long validation routine 
+
+#### Usage:
+
+```
+Base: 
+$ mrtopo validate-dir -d some_dir/
+
+Base + Topology Name: 
+$ mrtopo validate-file -d some_dir/ -t 'att'
+
+Base + Routine: 
+$ mrtopo validate-file -d some_dir/ --long
+
+Base + Routine + Topology Name: 
+$ mrtopo validate-file -d some_dir/ -t 'att' --not-long
+```
+
+#### Help:
+```
+$ mrtopo validate-dir --help                                                                                                                               ✔  8213  22:40:45
+Usage: mrtopo validate-dir [OPTIONS]
+
+  Validate a directory of Mininet topologies.
+
+Options:
+  -d, --dir TEXT            Validate a directory of Mininet topologies.
+                            [required]
+  -t, --topology-name TEXT  Name of topology found in python file. Example:
+                            'topos = { 'someName': ... } - someName would be
+                            the topology-name. Only use this option if you
+                            know that all python files in the specified
+                            dirfollow the topology name given.
+  --long / --not-long       Long test flag (i.e. pingall)
+  --help                    Show this message and exit.
 ```

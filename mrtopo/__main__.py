@@ -9,7 +9,7 @@ from mrtopo.util.filetype import FileType
 from mrtopo.validator.validator import validate
 import os
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 def main_routine(args):
 
