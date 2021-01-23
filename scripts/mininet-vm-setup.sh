@@ -10,8 +10,6 @@ echo 'if [ -d "$HOME/bin" ] ; then\n\tPATH="$PATH:$HOME/bin"\nfi' > ~/.bash_prof
 
 source ~/.bash_profile
 
-git clone https://github.com/FaizChishtie/mrtopo.git
-
 pip3 install mrtopo
 
 ## ONOS INSTALL
