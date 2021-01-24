@@ -13,29 +13,29 @@ prompt() {
 }
 
 select_script () {
-  if [ option = "q" ]
+  if [ $1 = "q" ]
   then
     echo "Bye."
     exit 1
   fi
   echo "Selected option $option"
-  if [ option = "0" ]
+  if [ $1 = "0" ]
   then
     echo "Full VM Install"
   fi
-  if [ option = "1" ]
+  if [ $1 = "1" ]
   then
     echo "Python 3.7.9 Install"
   fi
-  if [ option = "2" ]
+  if [ $1 = "2" ]
   then
     echo "Onos Install"
   fi
-  if [ option = "3" ]
+  if [ $1 = "3" ]
   then
     echo "Create Virtual Environment"
   fi
-  if [ option = "4" ]
+  if [ $1 = "4" ]
   then
     echo "Remove Virtual Environment"
   fi
@@ -68,7 +68,7 @@ do
 
   read option
 
-  select_script
+  select_script option
 
   echo Success!
 done
