@@ -22,23 +22,29 @@ select_script () {
   if [ "$1" = "0" ]
   then
     echo "Full VM Install"
+    return 1
   fi
   if [ "$1" = "1" ]
   then
     echo "Python 3.7.9 Install"
+    return 1
   fi
   if [ "$1" = "2" ]
   then
     echo "Onos Install"
+    return 1
   fi
   if [ "$1" = "3" ]
   then
     echo "Create Virtual Environment"
+    return 1
   fi
   if [ "$1" = "4" ]
   then
     echo "Remove Virtual Environment"
+    return 1
   fi
+  return 0
 }
 
 full_vm() {
@@ -68,7 +74,12 @@ do
 
   read option
 
-  select_script "$option"
+  status="$(select_script "$option")"
 
-  echo Success!
+  if [ "$status" != "0" ]
+  then
+    echo Success!
+  else
+    echo Something went wrong! Please try again. 
+  fi
 done
