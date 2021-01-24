@@ -7,7 +7,7 @@ yes | sudo apt install git
 yes | sudo apt install curl
 yes | sudo apt install gcc openssl-devel bzip2-devel libffi-devel
 
-sudo sh install-py
+sudo sh py-installer/install-py.sh
 
 source ~/.bash_profile
 
@@ -17,6 +17,6 @@ pip3 install mrtopo
 
 cd /home/mininet/mrtopo/scripts
 
-sudo sh install-onos-dependencies.sh
-sudo sh onos-install.sh
+sudo sh onos-installer/install-onos-dependencies.sh
+sudo sh onos-installer/onos-install.sh
 
