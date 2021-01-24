@@ -47,14 +47,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/mrtopo-scripts.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/install-onos-dependencies.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/onos-installer/install-onos-dependencies.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/install-py.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/py-installer/install-py.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/mininet-vm-setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/setup/mininet-vm-setup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/onos-install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/onos-installer/onos-install.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/rm-test-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test-env/rm-test-env.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/set-test-env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test-env/set-test-env.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mrtopo-scripts.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mrtopo-scripts.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
