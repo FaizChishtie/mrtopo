@@ -62,7 +62,15 @@ if __name__ == '__main__':
     setupNetwork()
 ```
 
+### Command Files
 
+These files are used to describe the ONOS test case to be run.
+
+* [Example file](https://github.com/FaizChishtie/mrtopo/blob/master/examples/command_file.sh)
+
+```
+cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SAMPstartTemplate_1node
+```
 
 ### Configuration Files
 

@@ -7,9 +7,10 @@ from mrtopo.translator import c_read, p_read, m_write, desc_write, list_write
 from mrtopo.interpreter import interpret
 from mrtopo.util.filetype import FileType
 from mrtopo.validator.validator import validate
+from mrtopo.tester.tester import test
 import os
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 def main_routine(args):
 
@@ -70,3 +71,11 @@ def validate_routine(args, name=None, long=False):
         descriptor.append(validate(_file, name, long))
 
     list_write(descriptor, "validator.txt")
+
+
+def test_routine(dir, target_file, command_file):
+    log('MrTopo.v.' + __version__ + '-tester>')
+
+    results = test(dir, target_file, command_file)
+
+    list_write(results, "MrTopoTest/test.txt")

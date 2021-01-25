@@ -1,0 +1,1 @@
+cell oneNodeDemo; cd ~/OnosSystemTest/TestON/bin/; ./cli.py run SAMPstartTemplate_1node

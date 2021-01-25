@@ -15,6 +15,8 @@ $ mrtopo [COMMAND] --help
 MrTopo commands:
 * `config-file`: *Not yet implemented* - Generate mutations from a configuration file.
 * `python-file`: Mutate a Mininet python file.
+* `mutate-and-test`: Mutate and Test a Mininet Topology file. 
+* `test-mutation-dir`: Test a mutated set of networks (directory) against a given Mininet topology file.
 * `validate-dir`: Validate a directory of Mininet topologies.
 * `validate-file`:  Validate a Mininet topology python file.
 
@@ -48,6 +50,12 @@ Options:
   --help           Show this message and exit.
 ```
 
+#### Output:
+
+* A `MrTopoGenerated` directory - containing:
+    * Multiple `mrtopo_gen_topo_<#>.py` mutated topology files generated from the input python file.
+    * A `desc.txt` file describing the mutation operation performed on each `mrtopo_gen_topo_<#>.py` file.
+
 ### Command: `config-file`
 
 > Note: This option has **not yet been implemented**
@@ -72,6 +80,8 @@ Options:
   -f, --file TEXT  MrTopo config file.  [required]
   --help           Show this message and exit.
 ```
+
+----
 
 ### Command: `validate-file`
 
@@ -122,6 +132,10 @@ Options:
   --long / --not-long       Long test flag (i.e. pingall)
   --help                    Show this message and exit.
 ```
+
+#### Output:
+
+* A `validator.txt` file describing the validation operation performed on the specified mutation file.
 
 ### Command: `validate-dir`
 
@@ -174,3 +188,100 @@ Options:
   --long / --not-long       Long test flag (i.e. pingall)
   --help                    Show this message and exit.
 ```
+
+#### Output:
+
+* A `validator.txt` file describing the validation operation performed on the each mutation file in the specified
+directory.
+
+
+----
+
+### Command: `mutate-and-test`
+
+MrTopo command used to mutate a Mininet topology and then execute a test on the outputs.
+
+> Note: *depending on the command file provided* this command may only be able to execute on ONOS machines.
+
+#### Options:
+
+* `-f, --file <path to python file>` [Required]: Accepts a Mininet topology file `.py`
+* `-cf, --command-file <path to bash file>` [Required]: Accepts a bash file
+
+#### Usage: 
+
+> The topology file specified must be a [mininet topology](http://mininet.org/walkthrough/#custom-topologies).
+
+```
+$ mrtopo mutate-and-test -f some_topology.py -cf some_commands.sh 
+// note .sh is not required as long as the -cf file is a bash file
+```
+
+#### Help:
+```
+$ mrtopo mutate-and-test --help                                                                                                                              2 ↵  8209  22:19:58
+Usage: mrtopo mutate-and-test [OPTIONS]
+
+  Mutate and Test a Mininet Topology file.
+
+Options:
+  -f, --file TEXT           Python file that MrTopo should mutate.  [required]
+  -cf, --command-file TEXT  Bash file that contains ONOS testing commands to
+                            execute.  [required]
+
+  --help                    Show this message and exit.
+```
+
+#### Output:
+
+* A `MrTopoGenerated` directory - containing:
+    * Multiple `mrtopo_gen_topo_<#>.py` mutated topology files generated from the input python file.
+    * A `desc.txt` file describing the mutation operation performed on each `mrtopo_gen_topo_<#>.py` file.
+* A `MrTopoTest` directory - containing:
+    * A copy of the original topology should anything have gone wrong during testing.
+    * A `test.txt` file detailing the output of each test
+
+### Command: `test-mutation-dir`
+
+MrTopo command used to test a mutated set of networks (directory) against a given Mininet topology file.
+
+> Note: *depending on the command file provided* this command may only be able to execute on ONOS machines.
+
+#### Options:
+
+* `-f, --file <path to python file>` [Required]: Accepts a Mininet topology file `.py`
+* `-cf, --command-file <path to bash file>` [Required]: Accepts a bash file
+
+#### Usage: 
+
+> The topology file specified must be a [mininet topology](http://mininet.org/walkthrough/#custom-topologies).
+
+```
+$ mrtopo mutate-and-test -d dir_of_mutated_files/ -tf original_topology -cf some_commands.sh 
+// note .sh is not required as long as the -cf file is a bash file
+```
+
+#### Help:
+```
+$ mrtopo test-mutation-dir --help                                                                                                                              2 ↵  8209  22:19:58
+Usage: mrtopo test-mutation-dir [OPTIONS]
+
+  Test a mutated set of networks (directory) against a given Mininet
+  topology file.
+
+Options:
+  -d, --dir TEXT            A directory of Mininet topologies.  [required]
+  -tf, --target-file TEXT   Name of file that MrTopo mutated and should
+                            substitute out during testing.  [required]
+
+  -cf, --command-file TEXT  Bash file that contains ONOS testing commands to
+                            execute.  [required]
+
+  --help                    Show this message and exit.
+```
+
+#### Output:
+
+* A `MrTopoTest` directory - containing:
+    * A copy of the original topology should anything have gone wrong during testing.
+    * A `test.txt` file detailing the output of each test
