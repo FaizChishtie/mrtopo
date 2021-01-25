@@ -1,2 +1,2 @@
-cr ../
+cd ../../
 rm -r tmpenv
