@@ -30,7 +30,6 @@ def test(dir, target_file, command_file):
     for path in mutated_file_paths:
         out = log(f"Executing test with: {path}") + "\n"
         shutil.copyfile(path, target_file)
-        call(f"cat {target_file}")
         out += call(f"sh {command_file}")
         test_out.append(out)
 

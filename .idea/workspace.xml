@@ -47,15 +47,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61df5051-b4bf-4558-a6bc-9a945673158c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/command_file.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mrtopo/tester/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mrtopo/tester/tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/HOWTO/COMMANDLINEOPTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/HOWTO/COMMANDLINEOPTS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrtopo/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrtopo/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrtopo/tester/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/mrtopo/tester/tester.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
