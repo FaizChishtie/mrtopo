@@ -10,9 +10,9 @@ from mrtopo.validator.validator import validate
 from mrtopo.tester.tester import test
 import os
 
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
-def main_routine(args):
+def main_routine(args, number_of_mutations):
 
     log('MrTopo.v.' + __version__ + '>')
 
@@ -41,7 +41,7 @@ def main_routine(args):
             # interpret
             network = interpret(pyfile)
 
-        mutant_networks = mutate(network)
+        mutant_networks = mutate(network, number_of_mutations)
 
         for mutant in mutant_networks:
             m_write(mutant, _file)

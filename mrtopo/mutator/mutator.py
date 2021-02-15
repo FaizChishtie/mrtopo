@@ -11,15 +11,14 @@ import random
 GENERATIONS = 30
 
 
-def mutate(network):
-    log("Mutator - mutating network " + str(GENERATIONS) + " times")
+def mutate(network, number_of_mutations = 30):
+    log("Mutator - mutating network " + str(number_of_mutations) + " times")
     mutant_networks = []  # type MutantNetwork
-    for i in range(GENERATIONS):
+    for i in range(number_of_mutations):
         operation = random.choice(list(Operations))
         mn = do(operation, network.deep_copy(), i)  # mutate deep copy of network
         if mn:
             mutant_networks.append(mn)
-    log(mutant_networks)
     return mutant_networks
 
 

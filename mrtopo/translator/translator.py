@@ -174,10 +174,21 @@ def add_host_string(name, number):
     return name + " = " + "self.addHost(" + "\'h" + str(number) + "\' ) # MRTOPO GENERATED LINE\n"
 
 
-def add_link_string(s1, s2):
-    return "self.addLink({}, {}, bw=10, delay='0.345064487693ms') # MRTOPO GENERATED LINE\n".format(s1,s2)
-    # TODO randomize opts
+def add_link_string(s1, s2, opts=[]):
+    options = ""
 
+    i = 0
+    for opt in opts:
+        if not (i == len(opts)-1):
+            options += f'{opt},'
+        else:
+            options += f'{opt}'
+        i += 1
+
+    if not options:
+        return "self.addLink({}, {}) # MRTOPO GENERATED LINE\n".format(s1, s2)
+
+    return "self.addLink({}, {}, {}) # MRTOPO GENERATED LINE\n".format(s1, s2, options)
 
 def add_host_link_string(s1, s2):
     return "self.addLink({}, {}) # MRTOPO GENERATED LINE\n".format(s1, s2)  # TODO randomize opts

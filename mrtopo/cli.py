@@ -24,12 +24,13 @@ def mutator():
 
 @click.command()
 @click.option('-f', '--file', type=str, required=True, help="Python file that MrTopo should mutate.")
-def python_file(file):
+@click.option('-n', '--number-of-mutations', type=int, help="Number of mutations MrTopo should generate (default = 30)")
+def python_file(file, number_of_mutations):
     '''
     Mutate a Mininet python file.
     '''
     if file != "":
-        main_routine((file, FileType.PYTHON))
+        main_routine((file, FileType.PYTHON), number_of_mutations)
 
 
 @click.command()
@@ -101,12 +102,13 @@ def test_mutation_dir(dir, target_file, command_file):
 @click.option('-f', '--file', type=str, required=True, help="Python file that MrTopo should mutate.")
 @click.option('-cf', '--command-file', type=str, required=True,
               help="Bash file that contains ONOS testing commands to execute.")
-def mutate_and_test(file, command_file):
+@click.option('-n', '--number-of-mutations', type=int, help="Number of mutations MrTopo should generate (default = 30)")
+def mutate_and_test(file, command_file, number_of_mutations):
     '''
     Mutate and Test a Mininet Topology file.
     '''
     if file != "":
-        main_routine((file, FileType.PYTHON))
+        main_routine((file, FileType.PYTHON), number_of_mutations)
 
     test_routine("MrTopoGenerated/", file, command_file)
 
