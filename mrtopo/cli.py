@@ -1,5 +1,5 @@
 import click
-from mrtopo.__main__ import main_routine, validate_routine, test_routine
+from mrtopo.__main__ import main_routine, validate_routine, test_routine, analyze_routine
 from mrtopo.util.filetype import FileType
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -113,6 +113,24 @@ def mutate_and_test(file, command_file, number_of_mutations):
     test_routine("MrTopoGenerated/", file, command_file)
 
 
+@click.group()
+def analyzer():
+    pass
+
+
+@click.command()
+@click.option('-mf', '--mutation-file', type=str, required=True,
+              help="Description file found in MrTopoGenerated directory `desc.txt`.")
+@click.option('-rf', '--results-file', type=str, required=True,
+              help="Test results file found in MrTopoTest directory `test.txt`.")
+def analyze(mutation_file, results_file):
+    '''
+    Analyze given results from a topology mutation and the tests run.
+    '''
+    if mutation_file != "" and results_file != "":
+        analyze_routine(mutation_file, results_file, 1)
+
+
 # build mutator
 mutator.add_command(python_file)
 mutator.add_command(config_file)
@@ -122,12 +140,14 @@ validator.add_command(validate_file)
 validator.add_command(validate_dir)
 
 # build tester
-
 tester.add_command(test_mutation_dir)
 tester.add_command(mutate_and_test)
 
+# build analyzer
+analyzer.add_command(analyze)
+
 # build cli
-cli = click.CommandCollection(sources=[mutator, validator, tester])
+cli = click.CommandCollection(sources=[mutator, validator, tester, analyzer])
 
 # DEBUG
 

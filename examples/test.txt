@@ -1,0 +1,400 @@
+Executing test with: MrTopoGenerated/mrtopo_gen_topo_1.py
+MrTopoGenerated
+MrTopoTest
+cf
+newFuncTopo.py
+oneNodeDemo
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_33_10/SAMPstartTemplate_1node_22_Mar_2021_00_33_10.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_33_10/SAMPstartTemplate_1node_22_Mar_2021_00_33_10.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_33_10/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_33_10/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "CASE0": "",
+    "CASE1": {
+        "NodeList": "OC1",
+        "SleepTimers": {
+            "mnCfg": "10",
+            "mnStartup": "15",
+            "onosCfg": "5",
+            "onosStartup": "60"
+        }
+    },
+    "CASE10": {
+        "Apps": "org.onosproject.openflow",
+        "ONOS_Configuration": {
+            "org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator": {
+                "useFlowObjectives": "true"
+            }
+        },
+        "numNodes": "1",
+        "restartCluster": "True"
+    },
+    "CASE11": {
+        "topo": "mn --topo tree,3,3"
+    },
+    "CASE12": "",
+    "CASE22": "",
+    "CASE32": "",
+    "GIT": {
+        "branch": "master",
+        "pull": "False"
+    },
+    "GRAPH": {
+        "builds": "20",
+        "nodeCluster": "VM"
+    },
+    "testcases": "0,1,10,11,12,22,2,32"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell",
+        {
+            "connect_order": "1",
+            "host": "localhost",
+            "user": "sdn",
+            "COMPONENTS": {
+                "web_user": null,
+                "diff_clihost": null,
+                "web_pass": null,
+                "prompt": null,
+                "cluster_name": null,
+                "onos_home": null,
+                "nodes": "7",
+                "karaf_password": null,
+                "karaf_username": null,
+                "rest_port": null
+            },
+            "home": null,
+            "password": "rocks",
+            "type": "OnosClusterDriver"
+        }
+    ],
+    [
+        "Mininet1",
+        {
+            "connect_order": "2",
+            "host": "OCN",
+            "user": "sdn",
+            "COMPONENTS": {
+                "home": "~/mininet/custom/",
+                "prompt": null
+            },
+            "password": "rocks",
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT
+******************************
+
+['ONOScell', 'Mininet1']
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[2021-03-22 00:33:16.338664] [SAMPstartTemplate_1node] [CASE]  Pull onos branch and build onos on Teststation.
+
+*****************************
+ Result: Pass
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[2021-03-22 00:33:16.340089] [SAMPstartTemplate_1node] [CASE]  Constructing test variables and building ONOS package
+[2021-03-22 00:33:16.340400] [SAMPstartTemplate_1node] [STEP]  1.1: Constructing test variables
+ONOSbench1:
+
+commit 46b27630d4e20b99b4c0e2c4ef1a348e665017e6 (HEAD -> master, origin/master, origin/HEAD)
+Author:     Daniele Moro <daniele@opennetworking.org>
+AuthorDate: Mon Feb 1 17:12:16 2021 +0100
+Commit:     Carmelo Cascone <carmelo@opennetworking.org>
+CommitDate: Thu Feb 11 16:52:57 2021 +0000
+
+    Add support for all tables wildcard read in P4Runtime
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass
+*****************************
+
+
+******************************
+ Result summary for Testcase10
+******************************
+
+[2021-03-22 00:33:16.879515] [SAMPstartTemplate_1node] [CASE]  Start up 1-node onos cluster.
+[2021-03-22 00:33:16.879889] [SAMPstartTemplate_1node] [STEP]  10.1: Start ONOS cluster with basic (drivers) app.
+[2021-03-22 00:33:16.880131] [SAMPstartTemplate_1node] [CASE]  Starting up 1 node(s) ONOS cluster
+[2021-03-22 00:33:17.492193] [SAMPstartTemplate_1node] [STEP]  10.2: Apply cell to environment
+[2021-03-22 00:33:21.380684] [SAMPstartTemplate_1node] [STEP]  10.3: Uninstalling Atomix
+[2021-03-22 00:33:22.256422] [SAMPstartTemplate_1node] [STEP]  10.4: Uninstalling ONOS package
+[2021-03-22 00:33:23.649670] [SAMPstartTemplate_1node] [STEP]  10.5: Creating ONOS package
+[2021-03-22 00:33:54.940204] [SAMPstartTemplate_1node] [STEP]  10.6: Installing Atomix
+[2021-03-22 00:33:59.453563] [SAMPstartTemplate_1node] [STEP]  10.7: Installing ONOS package
+[2021-03-22 00:34:26.367022] [SAMPstartTemplate_1node] [STEP]  10.8: Set up ONOS secure SSH
+[2021-03-22 00:34:26.581066] [SAMPstartTemplate_1node] [STEP]  10.9: Checking ONOS service
+[2021-03-22 00:34:40.254520] [SAMPstartTemplate_1node] [STEP]  10.10: Starting ONOS CLI sessions
+
+*****************************
+ Result: Failed
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+*************************************
+
+ Test Start           : 22 Mar 2021 00:33:10
+ Test End             : 22 Mar 2021 00:40:06
+ Execution Time       : 0:06:55.676292
+ Total Tests Planned  : 8
+ Total Tests Run      : 3
+ Total Pass           : 2
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 66%
+ Execution Percentage : 37%
+
+ Case Failed          : [10]
+ Case Executed        : [0, 1, 10]
+ Case Not Executed    : [11, 12, 22, 2, 32]
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>
+Executing test with: MrTopoGenerated/mrtopo_gen_topo_0.py
+MrTopoGenerated
+MrTopoTest
+cf
+newFuncTopo.py
+oneNodeDemo
+
+                                +----------------+
+------------------------------ { Script And Files }  ------------------------------
+                                +----------------+
+
+	Script Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_40_18/SAMPstartTemplate_1node_22_Mar_2021_00_40_18.log
+	Report Log File : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_40_18/SAMPstartTemplate_1node_22_Mar_2021_00_40_18.rpt
+	Mininet1 Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_40_18/Mininet1.session
+	ONOScell Session Log : /home/ubuntu/OnosSystemTest/TestON/logs/SAMPstartTemplate_1node_22_Mar_2021_00_40_18/ONOScell.session
+	Test Script : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.py
+	Test Params : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.params
+	Topology : /home/ubuntu/OnosSystemTest/TestON/tests/SAMP/SAMPstartTemplate_1node/SAMPstartTemplate_1node.topo
+                              +------------------+
+---------------------------  { Script Exec Params }  ---------------------------
+                              +------------------+
+
+{
+    "CASE0": "",
+    "CASE1": {
+        "NodeList": "OC1",
+        "SleepTimers": {
+            "mnCfg": "10",
+            "mnStartup": "15",
+            "onosCfg": "5",
+            "onosStartup": "60"
+        }
+    },
+    "CASE10": {
+        "Apps": "org.onosproject.openflow",
+        "ONOS_Configuration": {
+            "org.onosproject.net.intent.impl.compiler.IntentConfigurableRegistrator": {
+                "useFlowObjectives": "true"
+            }
+        },
+        "numNodes": "1",
+        "restartCluster": "True"
+    },
+    "CASE11": {
+        "topo": "mn --topo tree,3,3"
+    },
+    "CASE12": "",
+    "CASE22": "",
+    "CASE32": "",
+    "GIT": {
+        "branch": "master",
+        "pull": "False"
+    },
+    "GRAPH": {
+        "builds": "20",
+        "nodeCluster": "VM"
+    },
+    "testcases": "0,1,10,11,12,22,2,32"
+}
+
+                               +---------------+
+----------------------------- { Components Used }  -----------------------------
+                               +---------------+
+	Mininet1
+	ONOScell
+
+
+                              +--------+
+---------------------------- { Topology }  ----------------------------
+                              +--------+
+
+[
+    [
+        "ONOScell",
+        {
+            "connect_order": "1",
+            "host": "localhost",
+            "user": "sdn",
+            "COMPONENTS": {
+                "web_user": null,
+                "diff_clihost": null,
+                "web_pass": null,
+                "prompt": null,
+                "cluster_name": null,
+                "onos_home": null,
+                "nodes": "7",
+                "karaf_password": null,
+                "karaf_username": null,
+                "rest_port": null
+            },
+            "home": null,
+            "password": "rocks",
+            "type": "OnosClusterDriver"
+        }
+    ],
+    [
+        "Mininet1",
+        {
+            "connect_order": "2",
+            "host": "OCN",
+            "user": "sdn",
+            "COMPONENTS": {
+                "home": "~/mininet/custom/",
+                "prompt": null
+            },
+            "password": "rocks",
+            "type": "MininetCliDriver"
+        }
+    ]
+]
+------------------------------------------------------------
+
+
+******************************
+ CASE INIT
+******************************
+
+['ONOScell', 'Mininet1']
+
+******************************
+ Result summary for Testcase0
+******************************
+
+[2021-03-22 00:40:23.828220] [SAMPstartTemplate_1node] [CASE]  Pull onos branch and build onos on Teststation.
+
+*****************************
+ Result: Pass
+*****************************
+
+
+******************************
+ Result summary for Testcase1
+******************************
+
+[2021-03-22 00:40:23.829545] [SAMPstartTemplate_1node] [CASE]  Constructing test variables and building ONOS package
+[2021-03-22 00:40:23.829832] [SAMPstartTemplate_1node] [STEP]  1.1: Constructing test variables
+ONOSbench1:
+
+commit 46b27630d4e20b99b4c0e2c4ef1a348e665017e6 (HEAD -> master, origin/master, origin/HEAD)
+Author:     Daniele Moro <daniele@opennetworking.org>
+AuthorDate: Mon Feb 1 17:12:16 2021 +0100
+Commit:     Carmelo Cascone <carmelo@opennetworking.org>
+CommitDate: Thu Feb 11 16:52:57 2021 +0000
+
+    Add support for all tables wildcard read in P4Runtime
+sdn@manage:~/onos$
+
+*****************************
+ Result: Pass
+*****************************
+
+
+******************************
+ Result summary for Testcase10
+******************************
+
+[2021-03-22 00:40:24.364471] [SAMPstartTemplate_1node] [CASE]  Start up 1-node onos cluster.
+[2021-03-22 00:40:24.364822] [SAMPstartTemplate_1node] [STEP]  10.1: Start ONOS cluster with basic (drivers) app.
+[2021-03-22 00:40:24.365076] [SAMPstartTemplate_1node] [CASE]  Starting up 1 node(s) ONOS cluster
+[2021-03-22 00:40:24.975457] [SAMPstartTemplate_1node] [STEP]  10.2: Apply cell to environment
+[2021-03-22 00:40:28.911630] [SAMPstartTemplate_1node] [STEP]  10.3: Uninstalling Atomix
+[2021-03-22 00:40:29.785278] [SAMPstartTemplate_1node] [STEP]  10.4: Uninstalling ONOS package
+[2021-03-22 00:42:05.957444] [SAMPstartTemplate_1node] [STEP]  10.5: Creating ONOS package
+[2021-03-22 00:42:07.785941] [SAMPstartTemplate_1node] [STEP]  10.6: Installing Atomix
+[2021-03-22 00:42:12.298360] [SAMPstartTemplate_1node] [STEP]  10.7: Installing ONOS package
+[2021-03-22 00:42:38.286835] [SAMPstartTemplate_1node] [STEP]  10.8: Set up ONOS secure SSH
+[2021-03-22 00:42:38.499323] [SAMPstartTemplate_1node] [STEP]  10.9: Checking ONOS service
+[2021-03-22 00:42:49.392981] [SAMPstartTemplate_1node] [STEP]  10.10: Starting ONOS CLI sessions
+
+*****************************
+ Result: Failed
+*****************************
+
+
+
+*************************************
+	Test Execution Summary
+
+*************************************
+
+ Test Start           : 22 Mar 2021 00:40:18
+ Test End             : 22 Mar 2021 00:48:15
+ Execution Time       : 0:07:56.713058
+ Total Tests Planned  : 8
+ Total Tests Run      : 3
+ Total Pass           : 2
+ Total Fail           : 1
+ Total No Result      : 0
+ Success Percentage   : 66%
+ Execution Percentage : 37%
+
+ Case Failed          : [10]
+ Case Executed        : [0, 1, 10]
+ Case Not Executed    : [11, 12, 22, 2, 32]
+Disconnecting from ONOSserver1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from Mininet1: <class 'drivers.common.cli.emulator.mininetclidriver.MininetCliDriver'>
+Disconnecting from ONOSrest1: <class 'drivers.common.api.controller.onosrestdriver.OnosRestDriver'>
+Disconnecting from ONOSbench1: <class 'drivers.common.cli.onosdriver.OnosDriver'>
+Disconnecting from ONOScli1: <class 'drivers.common.cli.onosclidriver.OnosCliDriver'>
+Disconnecting from ONOScell: <class 'drivers.common.cli.onosclusterdriver.OnosClusterDriver'>

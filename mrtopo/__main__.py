@@ -3,14 +3,15 @@
 from mrtopo.logger import log
 from mrtopo.structures import config, Topology
 from mrtopo.mutator import mutate
-from mrtopo.translator import c_read, p_read, m_write, desc_write, list_write
+from mrtopo.translator import c_read, p_read, m_write, desc_write, list_write, make_folder
 from mrtopo.interpreter import interpret
 from mrtopo.util.filetype import FileType
 from mrtopo.validator.validator import validate
 from mrtopo.tester.tester import test
+from mrtopo.analyzer.analyzer import analyze
 import os
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 def main_routine(args, number_of_mutations):
 
@@ -79,3 +80,13 @@ def test_routine(dir, target_file, command_file):
     results = test(dir, target_file, command_file)
 
     list_write(results, "MrTopoTest/test.txt")
+
+
+def analyze_routine(mutation_file, results_file, nums):
+    log('MrTopo.v.' + __version__ + '-analyzer>')
+
+    results = analyze(mutation_file, results_file)
+
+    make_folder("MrTopoAnalyzed")
+
+    list_write(results, f"MrTopoAnalyzed/mrtopo_analysis_{nums}.csv")

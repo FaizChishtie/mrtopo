@@ -1,0 +1,11 @@
+MrTopo network mutation description file.
+Generated on 22/03/2021
+----------
+Case 0: Operations.ADDLINK
+Added link ['s1', 's7']
+Modified item(s): ['s1', 's7']
+----------
+Case 1: Operations.ADDLINK
+Added link ['s1', 's6']
+Modified item(s): ['s1', 's6']
+----------
