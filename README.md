@@ -5,6 +5,7 @@
 [![PyPI Status Badge](https://img.shields.io/pypi/status/mrtopo)](https://pypi.org/project/mrtopo/)
 [![License](https://img.shields.io/github/license/faizchishtie/mrtopo)](https://github.com/faizchishtie/mrtopo/blob/master/LICENSE)
 [![Downloads per month](https://img.shields.io/pypi/dm/mrtopo)](https://pypi.org/project/mrtopo/)
+[![Downloads](https://static.pepy.tech/personalized-badge/mrtopo?period=total&units=none&left_color=grey&right_color=blue&left_text=total%20downloads)](https://pepy.tech/project/mrtopo)
 
 * Author: Faizaan Chishtie
 
